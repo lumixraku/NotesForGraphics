@@ -44,29 +44,78 @@ A·B = |A| |B| cos(θ).
 - 方向是否相反(根据点乘的结果是否大于0)
 
 
-没有交换律
-但是有结合律
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/cross2.jpg)
 
 ## 叉乘
-叉乘的结果是一个向量, 且和两个向量正交(垂直)
-右手坐标系  右手螺旋定则   x 叉乘 y = z
-(如果是左手坐标系  x 叉乘 y 得到 -z   叉乘就是应用右手螺旋定则)
+- 叉乘的结果是一个向量, 且和两个向量正交(垂直)
+- 右手坐标系  右手螺旋定则   x 叉乘 y = z
+- (如果是左手坐标系  x 叉乘 y 得到 -z   叉乘就是应用右手螺旋定则)
 
-叉乘的笛卡尔方程表示形式
+### 叉乘的笛卡尔方程表示形式
+
 第二种是叉乘表示成矩阵形式
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/cross1.jpg)
 
+叉乘没有交换律  但是有结合律
+
 
 
 ### 叉乘在图形中的应用
-判定左右 (同一个起点的两个向量 如何判定谁在谁的左侧  a 叉乘 b 得到的结果z 是正  那么 b 在 a 的左侧)
-判定内外
+- 判定左右 (同一个起点的两个向量 如何判定谁在谁的左侧  a 叉乘 b 得到的结果z 是正  那么 b 在 a 的左侧)
+- 判定内外
 
 
-# 矩阵
+
+## 矩阵
 点乘 叉乘的矩阵表示形式
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/matrix.jpg)
+
+矩阵乘法没有交换律  但是有结合律分配律
+- 结合律： (λμ)A=λ(μA) ； (λ+μ)A =λA+μA．  A(BC) = (AB)C
+- 分配律： λ (A+B)=λA+λB． A(B+C) = AB + AC
+
+转置
+(AB)' = B'A'
+(A + B)' = A' + B'
+
+逆
+(AB)" = B"A"   (暂时用" 表示 -1)
+AA" = I
+
+
+# Lecture03
+## 线性变换
+- Scale
+- Reflection Matrix
+- Shear Matrix
+- Rotation Matrix
+
+旋转矩阵的推导
+
+先考虑特殊点 (1, 0)  可以得到 A 和 C   之后在考虑特殊点(0, 1) 可以推算到 B D
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/rotate1.jpg)
+
+## 齐次坐标
+
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/homo.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/homo1.jpg)
+
+考虑到 ponit + point 的运算(这样w 分量就是2了), 于是又扩展了齐次坐标的定义
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/homo2.jpg)
+
+## 2D变换的总结
+“仿射变换”就是：“线性变换”+“平移”
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/trans.jpg)
+
+变换的顺序
+
+下面表示最先做 A1 变换, 再做 A2 变换  ...最后到An
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/trans2.jpg)
