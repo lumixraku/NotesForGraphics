@@ -119,3 +119,72 @@ AA" = I
 下面表示最先做 A1 变换, 再做 A2 变换  ...最后到An
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/trans2.jpg)
+
+
+
+
+# Lecture04
+
+## 3D 变换
+
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/rotate3d.jpg)
+
+PS 需要说明的是 这个3D变换是针对右手坐标系 左手坐标系的很多值和这里完全相反
+
+## view transformation
+- view camera transformation
+- projection transformation
+  - 正交投影
+  - 透视投影
+
+## view/camera transformation 视图变换  (也被称为 modelview transformation )
+定义相机的 pos  lookat  up direction (前两个已经可以定义出相机镜头方向  up direction 就是镜头的旋转情况)
+为了方便计算,  先让相机放在原点 看向 -z 的方向, up 方向是 y 的正方向  (相机所拍的物体跟着相机一起运动  这样相机所拍的场景和移动之前都是一样的)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/view.jpg)
+
+因此要做下面的旋转
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/view1.jpg)
+
+PS 旋转矩阵是正交矩阵
+
+
+## 投影变换
+### 正交投影
+视锥体缩放到 [-1, 1] 的立方体中
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/project.jpg)
+
+先平移到原点  再缩放到标准立方体
+
+### 透视投影
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/project2.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/project3.jpg)
+
+
+# Lecture 05
+FOV
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/fov.jpg)
+
+这个图中红色的角度  垂直可视角度
+广角就是 FOV 比较大
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/fov2.jpg)
+
+n 表示近平面
+
+## 视椎体到屏幕 (After MVP)
+在得到了标准视椎体之后就需要投射到屏幕上
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/screen.jpg)
+
+## 光栅化
+
+光栅化的时候需要判断点是否在三角形内
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/inside.jpg)
+
+## 走样 (俗称锯齿)
