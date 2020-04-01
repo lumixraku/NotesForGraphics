@@ -338,9 +338,9 @@ O(n) 的计算深度的方法  每个物体诸葛遍历, 每个像素取最近�
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/zbuffer1.jpg)
 
-## Blinn-Phong 反射模型
+## 反射模型
 
-Shading is local.  着色是局部的.
+Shading is local.  着色是局部的.(每一个像素点独立运算)
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading.jpg)
 
@@ -349,3 +349,59 @@ Shading is local.  着色是局部的.
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading2.jpg)
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading3.jpg)
+
+
+# Lecture 08
+
+## 高光模型
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading4.jpg)
+
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading5.jpg)
+
+相比 Phong 高光, Blinn-Phong 高光因为引入了半程向量, 更容易计算.
+
+上面的 p 次方, 是为了柔和衰减
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading6.jpg)
+
+
+## 环境光
+
+ka 可以认为是常数
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading7.jpg)
+
+
+## Phong 光照总结
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading8.jpg)
+
+
+## 着色频率
+平坦着色: 逐个三角形着色
+Gouraud着色: 逐个顶点着色 (根据顶点做插值) (顶点求法线)
+Phong着色: 逐像素着色
+
+顶点的法线
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading9.jpg)
+
+每个像素点的法线
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/shading10.jpg)
+
+## 渲染管线
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline1.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline2.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline3.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline4.jpg)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/pipeline5.jpg)
