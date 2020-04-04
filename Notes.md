@@ -304,7 +304,7 @@ a c 的乘积 e  就是 b d 的卷积 f
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/sampling3.jpg)
 
-## MSAA
+## 反走样解决方式之 MSAA
 超采样, 每一个像素都再次划分, 然后判断点是否在三角形内, 之后再做平均 (这样去做的模糊).
 
 PS 超采样并没有增加分辨率
