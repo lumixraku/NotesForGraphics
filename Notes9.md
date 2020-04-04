@@ -13,6 +13,16 @@
 
 这里还可以看 [重心坐标](https://zhuanlan.zhihu.com/p/58199366)
 
+### 几何性质
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/barycentric2.jpg)
+
+α β γ 和对面三角形的面积有关
+
+那么三角形重心的 重心坐标就是 α β γ 都等于 1/3 的时候, 也就是三个划分的三角形面积相同的时候.
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/barycentric2.jpg)
+
 
 ### 用途
 
