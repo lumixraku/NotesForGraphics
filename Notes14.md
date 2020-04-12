@@ -130,7 +130,7 @@ BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间�
 
 - Radiant flux 辐射通量 (又称为 power)
 - Radiant intensity 辐射强度  (和方向有关)
-- irrediance 辐照度 (一个物体表面接收到的光的能量)
+- irrediance 辐照度 (一个物体表面单位面积接收到的光的能量)
 - rediance 辐射 (光线在传播过程中度量能量)
 
 
@@ -144,6 +144,8 @@ Radiant Intensity 是单位立体角上的power
 一般科学上, 针对平面 对于角的定义是用弧长来表示的.
 
 那么对于立体情况, 就是用这个角对应的球的表面积来定义.  (这里 A 是立体角对应的球面积)  (也就是对弧度制的延伸)
+
+立体角就是描述空间中角度有多大, 比如一个椎体张开的程度
 
 ![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/radiance3.png)
 
