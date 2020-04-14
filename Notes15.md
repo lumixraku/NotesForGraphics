@@ -37,7 +37,9 @@ Radiance 其实是在 Irradiance 基础上增加了方向
 或者说 Irradiance 是四面八方的 Radiance 的积分
 
 ## BRDF 双向反射分布函数
-通俗的说,  有多少能量, 从某个方向进来, 到反射方向上会分布多少能量.
+通俗的说, BRDF是在解决光从某个方向打到以个物体上, 光向不同方向去反射的能量分布.
+
+描述了光线和物体如何相互作用
 
 对于反射的理解:
 
@@ -45,4 +47,11 @@ Whitted Style 光线打到某一个物体上, 然后被弹走了(方向改变了
 
 另一种理解: 光线打到某一个表面, 结果被吸收了, 然后又朝特定的方向发射出去了.
 
-如何把某一个方向收集到的能量反射到其他方向上去?  BRDF 定义了如何去分配这些能量.
+ωi 表示不同方向的入射光
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/brdf.png)
+
+
+射出的radiance 可能成为其他点的入射radiance (此刻被照亮的物体本身作为光源存在了)
+
+![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/brdf2.png)
