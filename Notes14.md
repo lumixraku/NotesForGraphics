@@ -4,12 +4,12 @@
 
 与物体相交的格子标记为某一种类型 (右上角漏标记了)
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/accray.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/accray.png)
 
 
 假设: 光线和盒子相交很快, 光线和物体三角面求交很快.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/accray2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/accray2.png)
 
 因此很重要的是如何合理的将空间划分成各种格子.  如果这个光线经过的格子中有物体, 就要开始求光线和物体是否相交.
 
@@ -17,7 +17,7 @@
 
 
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/accray3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/accray3.png)
 
 根据经验, 格子数 = 某个常数 * 空间中物体数
 
@@ -29,7 +29,7 @@
 
 ## 空间切分
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/spatial.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/spatial.png)
 
 
 ### Oct-Tree
@@ -60,18 +60,18 @@
 
 从空间开始划分
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/kdtree.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/kdtree.png)
 
 
 如果光线和最外面的盒子有交点, 那么可能和子盒子有交点. 需要继续判断一下. 递归直到叶子节点.
 
 如果一个子盒子是叶子节点, 光线就需要和这个叶子节点中的所有物体求交.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/kdtree1.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/kdtree1.png)
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/kdtreeA.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/kdtreeA.png)
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/kdtreeB.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/kdtreeB.png)
 
 那么如何知道一个盒子和空间中的三角形面有交集呢?
 
@@ -82,7 +82,7 @@
 
 例如 t hit 这个位置的物体 和3个叶子节点相交
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/kdtree3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/kdtree3.png)
 
 
 
@@ -93,7 +93,7 @@
 
 从物体开始划分, 而不是从空间开始划分.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/bvh1.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh1.png)
 
 一堆三角形分为两堆, 左边的那一堆三角形又再次划分.
 
@@ -102,13 +102,13 @@
 一个好处: 一个三角形只可能在一个包围盒中.
 
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/bvh2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh2.png)
 
 这里的median 怎么理解呢? 就是不管按照何种方式去划分三角形, 最后划分出的两堆三角形数量差不多.
 (平衡树的概念, 避免树的深度过高, 这样查找起来才效率才高. )
 
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/bvh3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh3.png)
 
 KD tree 是对空间划分, 物体可能即在左边又在右边
 
@@ -126,7 +126,7 @@ BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间�
 
 描述光的功率: 流明 lm
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/radiance.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance.png)
 
 - Radiant flux 辐射通量 (又称为 power)
 - Radiant intensity 辐射强度  (和方向有关)
@@ -134,7 +134,7 @@ BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间�
 - rediance 辐射 (光线在传播过程中度量能量)
 
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/radiance2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance2.png)
 
 Radiant Intensity 是单位立体角上的power
 
@@ -147,9 +147,9 @@ Radiant Intensity 是单位立体角上的power
 
 立体角就是描述空间中角度有多大, 比如一个椎体张开的程度
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/radiance3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance3.png)
 
 单位立体角可以理解为 半径为1的二维球面上的一小块面积
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/radiance3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance3.png)
 所有单位立体角的积分是 4π

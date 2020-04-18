@@ -13,11 +13,11 @@
 凹凸贴图的进化版 位移贴图( Displacement mapping )
 
 ### 球体映射到立方体
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/texture10.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/texture10.png)
 
 
 ### 位移贴图
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/texture11.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/texture11.png)
 
 位移贴图真的移动了顶点, 凹凸贴图只是改了法线,那么在物体的边缘上就会穿帮(边缘还是很光滑)
 
@@ -35,7 +35,7 @@ f(x, y, z) = 0
 
 不容易看出物体张啥样, 但是可以通过表达式 =0   >0   <0 判断出点在物体外还是物体内
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/geometry1.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/geometry1.png)
 
 ### 显式表示
 
@@ -47,11 +47,11 @@ R^2 => R^3   二维到三维的映射
 
 虽然很容易看出图形的形状, 但是却不好判断点是否在图形内还是外
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/geometry2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/geometry2.png)
 
 ### 构造实体几何 CSG
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/geometry3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/geometry3.png)
 
 ## 距离函数
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/distance.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/distance.png)

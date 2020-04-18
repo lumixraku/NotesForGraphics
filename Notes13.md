@@ -6,7 +6,7 @@
 
 一般认为光栅化是属于快速近似. 并不是那么精细. 而光线追踪追求更加真实.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing3.png)
 
 glossy 表示有点反光, 但是又有些粗糙的物体 (铜镜)
 
@@ -14,19 +14,19 @@ glossy 表示有点反光, 但是又有些粗糙的物体 (铜镜)
 
 早期人类认为人能看见物体, 是因为眼睛发出光线, 看到物体之后再返回来.  这和现在的常识不符.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/emmision.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/emmision.png)
 
 
 光线追踪是跟踪眼睛发出的光线( 这点似乎和常识有点不同, 是由于光路可逆 ) 到达物体的过程
 
 光线的一个性质: 光路可逆 (也就是追踪的意思)
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing4.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing4.png)
 
 
 沿着一根光线, 记录最近的交点
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing.png)
 
 光线追踪因为 ray 是从眼睛( 摄像机 ) 发出, 因此天然的解决了遮挡(深度测试)的问题,
 
@@ -36,22 +36,22 @@ glossy 表示有点反光, 但是又有些粗糙的物体 (铜镜)
 
 Whitted Style: 多次递归反射, 就是在模拟光线在不断弹射的过程.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing2.png)
 
 下面是一个玻璃球, 既有折射, 又有反射. 同时还要计算和光源的情况.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing5.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing5.png)
 
 其实从这个图可以看到 光路有很多条, 最终我们要计算的是他们的和 (每条光路存在能量损失, 不然加起来光线亮度就很亮了)
 
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing6.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing6.png)
 
 
 
 ### 和球的交点
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing7.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing7.png)
 
 ### 和显式表面怎么做呢?
 刚才 f(xx) = 0 是一个隐式表面的几何表达形式.
@@ -71,16 +71,16 @@ PS
 
 通过法线 和某一个点  其实就定义了平面
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing8.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing8.png)
 
 两个向量点乘是0  表示相互垂直   (p' 是平面上任意一个点)
 
 
 和前面和球球交点问题一样, 交点即在平面上 有在光线上. 因此两个公式都满足.
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing9.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing9.png)
 
 ### 上面的方式是先和平面求交点, 再判断是否在三角形内. 有么有更加直接的办法呢?
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/raytracing10.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing10.png)
 
 注意公式中的 1 - b1 -b2 , 点既然在三角形内, 那么这个点可以使用中心坐标去表示.  (重心坐标的一个性质就是 b1+ b2 + b3 = 1)
 
@@ -98,15 +98,15 @@ PS
 
 上下左右前后 3对对面, 形成一个包围盒.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/aabb3.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/aabb3.png)
 
 
 先看2D 情况下的包围盒
 
 光线射入, 记录下碰到对面1 的时间 和 离开对面2 的时间.
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/aabb1.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/aabb1.png)
 
-![image](https://github.com/lumixraku/NotesForGraphics/raw/master/images/aabb2.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/aabb2.png)
 
 最终的包围盒中的射线, 是这三者求交集
