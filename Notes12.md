@@ -9,7 +9,7 @@ regularization 正规化 使用相同的三角形来表达
 ## Sub division 方法
 ### Loop (并不是循环  只是提出人的名字是loop)
 
-Loop 细分: 先细分, 再调整 (但是 Loop 细分至适用于三角形网格)
+Loop 细分: 先细分, 再调整 (但是 Loop 细分仅适用于三角形网格)
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/mesh2.png)
 
@@ -65,9 +65,17 @@ u 是和顶点的度有关的一个数
 
 经典的shadow mapping 只能处理点光源
 
-1. 从光源看向场景, 记录深度(光源到物体的距离, 考虑被遮挡的情况, 一些光根本照不到物体.)
+1. 从光源看向场景, 记录深度(光源到物体的距离, 考虑被遮挡的情况, 一些光根本照不到物体. 所以很多物体不能从光源处看到)
 2. 从摄像机出发, 看到的场景再投射回光源, 计算深度(点到光源的距离, 不考虑被遮挡)
 3. 对比两个距离, 如果不一样, 表示存在遮挡(阴影).
+
+
+[Unity实时阴影实现图解](https://gameinstitute.qq.com/community/detail/112131)  这里对阴影也有一些说明
+
+```
+第一次渲染中以光源位置作为视点，基于 Z-buffering 算法，将每个像素点的深度值（z-depth）也就是距离光源最近的对象距离记录在 Z-buffer 中，输出到 FBO(Framebuffer Object) 关联的 texture 中，生成 Shadow Map。
+第二次场景渲染时，以正常摄像机作为视点，将每个 fragment 到光源的距离和 Shadow Map 中保存的深度值进行比较，如果大于后者则说明被其他物体遮挡处于阴影之中。
+```
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shadow.png)
 
