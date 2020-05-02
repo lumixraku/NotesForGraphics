@@ -373,6 +373,10 @@ Shading is local.  着色是局部的.(每一个像素点独立运算)
 
 上面的 p 次方, 是为了柔和衰减
 
+PS: 这里有个max(0, cosα) 是为了考虑光从平面下方打到平面的情况  我们只取大于 0 的值
+
+PS: cosα 可以写成 法线n 点乘 半程向量h
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading6.jpg)
 
 

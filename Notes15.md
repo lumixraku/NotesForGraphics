@@ -73,22 +73,72 @@ PS: Li(p, ωi)cos(θi)dωi 做积分就是图中那一个小块区域得到的 I
 
 
 
-### The Rendering Equation 渲染方程
+## The Rendering Equation 渲染方程
 
+通过一个方程描述所有的光线传播(仅限于物体表面)
 
-递归
+### 递归
 
 射出的radiance 可能成为其他点的入射radiance (此刻被照亮的物体本身作为光源存在了), 因此入射光不仅仅是单一的光源.
 
+
+### 渲染方程
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering2.jpg)
 
 
 所看到的光 等于物体自己发出的光 + 从四面八方反射过来的光
+
+
 Le(p, ωo) 表示自发光
+
+Ω+  OR   H^2 表示半球
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering.jpg)
 
 
 PS: 注意和 BlinnPhong 一样, 虽然我们知道光是从外部射入, 但是规定上入射光的方向 ωi 是从内向外
+
+### Reflection Equation 反射方程
+
+单一点光源的简单情况
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/reflect.jpg)
+
+多个点光源的情况
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/reflect2.jpg)
+
+当有一个面光源的时候
+
+实际上就是把面光源当做多个点光源的集合,  对立体角做积分
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/reflect3.jpg)
+
+
+但是对于其他物体反射过来的光应该怎么整?
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering3.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering4.jpg)
+
+PS: 光线追踪特别适合处理间接光照
+
+## Brief Review of probability theory 概率论回顾
+
+随机变量分布: 通俗的说随机变量根据不同的概率取不同的值. 取某些值概率大, 某些值概率小.
+
+期望: 不断的取随机变量, 然后求平均.
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/propability.jpg)
+
+### PDF (Probability Distribution Function) 概率密度函数
+描述连续情况下的概率和分布  (之前掷骰子的例子是离散情况)
+
+PS: 仍然是微积分的思想, 把之前离散的取值(x=1, 2, 3 ..)
+不断细分(x=1.11...1, x=1.11...2 ...), 使其成为连续的随机变量.
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/propability2.jpg)
 
 
 # Read More
