@@ -53,7 +53,7 @@ Whitted Style 光线打到某一个物体上, 然后被弹走了(方向改变了
 
 ## The Reflection Equation 反射方程
 
-ωi 表示不同方向的入射光
+ωi 表示不同方向的入射光 (从内到外)
 
 p 表示反射点 point
 
@@ -80,12 +80,15 @@ PS: Li(p, ωi)cos(θi)dωi 做积分就是图中那一个小块区域得到的 I
 
 射出的radiance 可能成为其他点的入射radiance (此刻被照亮的物体本身作为光源存在了), 因此入射光不仅仅是单一的光源.
 
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering2.jpg)
 
-
-可以理解为递归的积分
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering.jpg)
 
 所看到的光 等于物体自己发出的光 + 从四面八方反射过来的光
+Le(p, ωo) 表示自发光
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering.jpg)
+
+
+PS: 注意和 BlinnPhong 一样, 虽然我们知道光是从外部射入, 但是规定上入射光的方向 ωi 是从内向外
 
 
 # Read More
