@@ -130,8 +130,8 @@ BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间�
 
 - Radiant flux 辐射通量 (又称为 power)
 - Radiant intensity 辐射强度  (和方向有关)
-- irrediance 辐照度 (一个物体表面单位面积接收到的光的能量)
-- rediance 辐射 (光线在传播过程中度量能量)
+- irrediance 辐照度 OR 辐射照度 (物理学: 单位面积接收到的辐射通量    图形学:一个物体表面单位面积接收到的光的能量)
+- radiance 辐射亮度 (物理学:单位投影面积, 单位立体角上的辐射通量      图形学:光线在传播过程中度量能量)
 
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance2.png)
@@ -153,3 +153,9 @@ Radiant Intensity 是单位立体角上的power
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance3.png)
 所有单位立体角的积分是 4π
+
+
+# Read More
+(Radiance versus irradiance)[http://sites.sinauer.com/animalcommunication2e/chapter04.02.html]
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance11.jpg)
