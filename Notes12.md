@@ -1,4 +1,4 @@
-# Lecture 12 Gemometry3
+# Lecture 12 Gemometry 3
 
 ## Mesh Process
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/mesh1.png)

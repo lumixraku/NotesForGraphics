@@ -1,4 +1,4 @@
-# Lecture 11
+# Lecture 11 Geometry 2
 
 显式几何表示方式: 三角形顶点, 贝塞尔曲面, 细分曲面, 非均匀有理B样条(NURBS), 点云,
 

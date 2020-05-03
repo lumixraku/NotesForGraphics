@@ -1,4 +1,4 @@
-# Lecture 09
+# Lecture 09 Shading 3
 
 ## 重心坐标
 

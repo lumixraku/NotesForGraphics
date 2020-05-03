@@ -1,4 +1,4 @@
-# Lecture 10
+# Lecture 10  Geometry 1
 
 ## 一些经典模型
 犹他茶壶

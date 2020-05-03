@@ -140,6 +140,7 @@ PS: 仍然是微积分的思想, 把之前离散的取值(x=1, 2, 3 ..)
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/propability2.jpg)
 
+如同离散随机变量所有概率的和等于1 一样, 连续随机变量的积分最终结果就是1
 
 # Read More
 
@@ -150,7 +151,7 @@ https://blog.csdn.net/anx8282/article/details/101860444?utm_medium=distribute.pc
 
 https://www.cnblogs.com/mengdd/p/3237991.html
 
-PDF 概率密度函数
+
 
 
 ## (Radiance versus irradiance
