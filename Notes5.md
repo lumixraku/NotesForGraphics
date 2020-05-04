@@ -2,8 +2,22 @@
 
 Part I Triangle
 
+## What should we do after MVP ?  视体(Frustum) 到屏幕
+经过了Viewing Transformation(观测变换, 其中包括view transformation视图变换  project transformation 投影变换)之后, 就得到了标准视体, 也就是一个范围是[-1, 1]的立方体盒子.
 
-FOV
+接下里, 就需要投射到屏幕上.
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/mvp.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/screen.jpg)
+
+
+### Frustum 到 screen 的变换
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/screen1.jpg)
+
+
+## FOV
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/fov.jpg)
 
 这个图中红色的角度  垂直可视角度
@@ -13,10 +27,7 @@ FOV
 
 n 表示近平面
 
-## 视椎体到屏幕 (After MVP)
-在得到了标准视椎体之后就需要投射到屏幕上
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/screen.jpg)
 
 ## 光栅化
 
