@@ -131,10 +131,25 @@ Projection is a Transformation.  投影是一种变换.
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project6.jpg)
 
+
+最左侧的那个实心小点  代表相机的位置  Y 画出了相机的Up 方向.  从 Z 方向说明相机正向 -Z 方向看.
+
 原本的 y 在挤压之后变为 y'  根据相似三角形就可以得到上面的结果
 
 
+PS:  我们只知道近平面和远平面 z 值不变, 中间z 是否变不确定.
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project8.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project9.jpg)
+
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project2.jpg)
+
+
+PS:  注意这里最后 (0,0, A, B)那一块是简写   只写了透视矩阵的第三行  最后n^2 也是说透视 矩阵✖️ (x, y, z, 1) 得到的第三行的值
+
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project3.jpg)
 

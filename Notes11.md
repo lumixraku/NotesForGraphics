@@ -17,7 +17,7 @@
 用一系列控制点去定义曲线
 
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier.jpg)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier.png)
 
 给定三个点: 生成二次贝塞尔曲线
 
@@ -32,7 +32,7 @@ https://github.com/venshine/BezierMaker
 
 对于4个控制点的情形:
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier1.jpg)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier1.png)
 
 从原来4个点 3条线段(b0b1  b1b2   b2b3)
 

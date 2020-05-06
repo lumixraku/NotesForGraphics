@@ -13,7 +13,9 @@ Part I Triangle
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/screen.jpg)
 
 
-### Frustum 到 screen 的变换
+### 视口变换
+
+Frustum 到 screen 的变换
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/screen1.jpg)
 
 
