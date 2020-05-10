@@ -110,11 +110,17 @@ Projection is a Transformation.  投影是一种变换.
 
 实际上一般是这么操作:
 
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project7.jpg)
+
 先确定视野范围(图中的矩形空间)  然后标准化( 规则观察体 )
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project.jpg)
 
-平移到原点  再缩放到标准立方体 (视锥体xyz 都缩放到 [-1, 1] 的范围)
+所以得到的矩阵变换如下
+
+1. 平移到原点
+2. 再缩放到标准立方体 (视锥体xyz 都缩放到 [-1, 1] 的范围)
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project.jpg)
 
 
 ### 透视投影
@@ -142,16 +148,36 @@ PS:  我们只知道近平面和远平面 z 值不变, 中间z 是否变不确�
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project8.jpg)
 
 
+
+根据相似三角形, 已经可以推出部分矩阵了
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project9.jpg)
 
+现在只剩第三行不知道了
 
+根据近平面的点变换之后不会变, 也就是(x, y, n, 1) => (x, y, n, 1). 另外根据其次坐标变换一种表达形式 (nx, ny, n^2, n)
+
+就可以得到第三行应该是 (0, 0, A, B) 的形式.
+(因为得到的结果是 n^2 也就是 xy 的部分都是0 )
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project2.jpg)
 
+PS:  注意这里最后 (0,0, A, B)那一块是简写   只写了透视矩阵的第三行  最后的 n^2 是说透视 矩阵✖️ (x, y, z, 1) 得到的第三行的值
 
-PS:  注意这里最后 (0,0, A, B)那一块是简写   只写了透视矩阵的第三行  最后n^2 也是说透视 矩阵✖️ (x, y, z, 1) 得到的第三行的值
-
-
+另外再根据变换后远平面的 z 值不改变, 就可以得到一个方程组.
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/project3.jpg)
+
+那么透视投影矩阵就是
+```
+n    0    0    0
+0    n    0    0
+0    0   n+f  -nf
+0    0    1    0
+```
+
+## 另外最后课程中提到了一个问题
+经过这个变换之后  两个面中间的 z 会怎么改变? 是更偏向 n 还是更偏向 f
+
+
 
 ## Read More
 
