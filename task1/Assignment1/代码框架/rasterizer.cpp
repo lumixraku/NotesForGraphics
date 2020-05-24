@@ -234,3 +234,4 @@ void rst::rasterizer::set_pixel(const Eigen::Vector3f& point, const Eigen::Vecto
     auto ind = (height-point.y())*width + point.x();
     frame_buf[ind] = color;
 }
+

@@ -3,10 +3,9 @@
 #include <eigen3/Eigen/Eigen>
 #include <iostream>
 #include <opencv2/opencv.hpp>
-#include <cmath>
+
 constexpr double MY_PI = 3.1415926;
 
-//comment mac 0318 002
 Eigen::Matrix4f get_view_matrix(Eigen::Vector3f eye_pos)
 {
     Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
@@ -27,33 +26,8 @@ Eigen::Matrix4f get_model_matrix(float rotation_angle)
     // TODO: Implement this function
     // Create the model matrix for rotating the triangle around the Z axis.
     // Then return it.
-    // 逐个元素地构建模型变换矩 阵并返回该矩阵。在此函数中，你只需要实现三维中绕 z 轴旋转的变换矩阵， 而不用处理平移与缩放。
 
-    // PS！ 都是弧度而非角度
-    float angle = rotation_angle * MY_PI / 180;
-    model(0,0)= cos(angle);
-    model(0,1) = -sin(angle);
-    model(1,0) = sin(angle);
-    model(1,1) = cos(angle);
     return model;
-}
-Eigen::Matrix4f get_rotation(Vector3f axis,float angle)
-{
-    float angle_x,angle_y,angle_z;
-    float length = sqrt(axis.x() * axis.x() + axis.y()*axis.y()+axis.z()*axis.z());
-    // PS  std::cos 表示的是 std命名空间下的 cos 函数 std::cos 和 cos 的区别是接受的参数类型不同
-
-    angle_x = std::acos(axis.x()/length);
-    angle_y = std::acos(axis.y()/length);
-    angle_z = std::acos(axis.z()/length);
-    Eigen::Matrix4f m1,m2,m3  = Eigen::Matrix4f::Identity();
-    m1<<1,0,0,0,0,cos(angle_x),-sin(angle_x),0,0,sin(angle_x),cos(angle_x),0,0,0,0,1;
-    m2<<cos(angle_y),0,sin(angle_y),0,0,1,0,0,-sin(angle_y),0,cos(angle_y),0,0,0,0,1;
-    m3<<cos(angle_z),-sin(angle_z),0,0,sin(angle_z),cos(angle_z),0,0,0,0,1,0,0,0,0,1;
-
-    Eigen::Matrix4f rotation = Eigen::Matrix4f::Identity();
-    rotation =m3*m2*m1*Eigen::Matrix4f::Identity();
-    return rotation;
 }
 
 Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
@@ -66,26 +40,6 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
     // TODO: Implement this function
     // Create the projection matrix for the given parameters.
     // Then return it.
-    float eye_angle = eye_fov *MY_PI / 180;
-    float t,b,l,r;
-    t = zNear * tan(eye_angle /2);
-    r = t * aspect_ratio;
-    l = -r;
-    b = -t;
-    Eigen::Matrix4f PersToOrth = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f m1;
-    Eigen::Matrix4f m2;
-    Eigen::Matrix4f m3;
-    // perspective
-    m1<< zNear,0,0,0,0,zNear,0,0,0,0,zNear + zFar,-zNear*zFar,0,0,1,0;
-
-    // scale in Orthographic Projection
-    m2 << 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -(zNear + zFar) / 2, 0, 0, 0, 1;
-
-    // translate inOrthographic Projection
-    m3 << 2 / (r - l), 0, 0, 0, 0, 2 / (t - b), 0, 0, 0, 0, 2 / (zNear - zFar), 0, 0, 0, 0, 1;
-
-    projection = m3 * m2 * m1 * projection;
 
     return projection;
 }
@@ -148,7 +102,7 @@ int main(int argc, const char** argv)
         cv::Mat image(700, 700, CV_32FC3, r.frame_buffer().data());
         image.convertTo(image, CV_8UC3, 1.0f);
         cv::imshow("image", image);
-        key = cv::waitKey(1);
+        key = cv::waitKey(10);
 
         std::cout << "frame count: " << frame_count++ << '\n';
 
