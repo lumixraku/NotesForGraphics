@@ -6,6 +6,8 @@
 [PPT](http://games-cn.org/graphics-intro-ppt-video/)
 
 
+Codes forked from `https://github.com/kingiluob/Games101`
+
 ## Prepare for task env
 
 ```
@@ -69,3 +71,8 @@ https://stackoverflow.com/questions/24985713/opencv-undefined-symbols-for-archit
 
 ### xcode No member named 'FILE' in the global namespace
 https://stackoverflow.com/questions/30638320/xcode-cstdlib-no-member-named-xxx-in-the-global-namespace
+
+## for task2
+Implicit instantiation of undefined template 'std::__1::array<Eigen::Matrix<float, 4, 1, 0, 4, 1>, 3>'
+
+Add `#inclue <array>` in rasterizer.cpp
