@@ -4,7 +4,7 @@
 [主办方主页](http://games-cn.org/)
 [课程主页](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
 [PPT](http://games-cn.org/graphics-intro-ppt-video/)
-
+[Assignments](http://games-cn.org/forums/topic/allhw/)
 
 Codes forked from `https://github.com/kingiluob/Games101`
 
@@ -75,4 +75,24 @@ https://stackoverflow.com/questions/30638320/xcode-cstdlib-no-member-named-xxx-i
 ## for task2
 Implicit instantiation of undefined template 'std::__1::array<Eigen::Matrix<float, 4, 1, 0, 4, 1>, 3>'
 
-Add `#inclue <array>` in rasterizer.cpp
+Add `#include <array>` in rasterizer.cpp
+
+## for task3
+Should use C++ 17
+Set `C++ Language Dialect` to `C++ 17 [std=C++17]`
+Set `C++ Standard Library` to `... LLVM C++ ...`
+
+Another thing you have to know is Xcode not running your CPP code in your work directory, but a very deep path like `~/Library/Developer/Xcode/DerivedData/task3-ewyxlatyzwtvlgcrtquhcxutpryf/Build/Products/Debug`
+
+you can find this path under `File explorer --->  Products` then right click  your app `Show in finder`
+
+So, if you want to read file, you have to copy your file to certain path.
+
+check this https://mmquant.net/working-directories-and-build-locations-with-xcode9-and-cpp/
+
+I am now using option2 for task3.
+
+Set `Copy Files ---> Destination` to `Products Directory`
+and set subpath to empty. Click `+` to choose your models folder.
+After you click running, you will see models copied into `~/Library/Developer/Xcode/DerivedData/task3-ewyxlatyzwtvlgcrtquhcxutpryf/Build/Products/Debug`
+
