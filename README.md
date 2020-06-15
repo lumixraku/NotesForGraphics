@@ -78,10 +78,12 @@ Implicit instantiation of undefined template 'std::__1::array<Eigen::Matrix<floa
 Add `#include <array>` in rasterizer.cpp
 
 ## for task3
-Should use C++ 17
+
+### You should use C++ 17
 Set `C++ Language Dialect` to `C++ 17 [std=C++17]`
 Set `C++ Standard Library` to `... LLVM C++ ...`
 
+### read file
 Another thing you have to know is Xcode not running your CPP code in your work directory, but a very deep path like `~/Library/Developer/Xcode/DerivedData/task3-ewyxlatyzwtvlgcrtquhcxutpryf/Build/Products/Debug`
 
 you can find this path under `File explorer --->  Products` then right click  your app `Show in finder`
@@ -95,4 +97,10 @@ I am now using option2 for task3.
 Set `Copy Files ---> Destination` to `Products Directory`
 and set subpath to empty. Click `+` to choose your models folder.
 After you click running, you will see models copied into `~/Library/Developer/Xcode/DerivedData/task3-ewyxlatyzwtvlgcrtquhcxutpryf/Build/Products/Debug`
+
+### run with arguments
+`Product ---> Scheme ---> Edit Scheme` 
+
+First argument is `output.png`. Second argument is `texture or phone or normal ..`
+
 

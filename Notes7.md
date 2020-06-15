@@ -29,7 +29,13 @@ Shading is local.  着色是局部的.(每一个像素点独立运算)
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading.jpg)
 
 
-兰伯特漫反射和角度有关
+
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading2.jpg)
 
+兰伯特漫反射和观察角度无关 Independent of view direction
+
+这里的大写字母 I 是光的强度 
+
+diffuse 扩散，Kd (diffuse coefficient) 漫反射系数  （基本上就是材质本身的颜色）
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading3.jpg)

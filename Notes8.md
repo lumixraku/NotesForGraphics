@@ -4,6 +4,7 @@
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading4.jpg)
 
+Specular Shading  n 法向量 h 半程向量  p 是柔和衰减系数  h是观察方向和入射光方向的中间向量
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading5.jpg)
 
@@ -17,10 +18,11 @@ PS: cosα 可以写成 法线n 点乘 半程向量h
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading6.jpg)
 
+PS: 另外需要说明的是入射光方向和中学物理中的方向是相反的， 这个公式中入射光的方向就是用光源减去点
 
 ## 环境光
 
-ka 可以认为是常数
+ka 可以认为是常量 也就是环境光的颜色 Ia 表示环境光的强度  
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading7.jpg)
 

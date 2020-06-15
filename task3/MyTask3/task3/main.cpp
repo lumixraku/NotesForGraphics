@@ -8,7 +8,6 @@
 #include "Texture.hpp"
 #include "OBJ_Loader.h"
 
-
 Eigen::Matrix4f get_view_matrix(Eigen::Vector3f eye_pos)
 {
     Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
@@ -88,6 +87,8 @@ Eigen::Vector3f vertex_shader(const vertex_shader_payload& payload)
     return payload.position;
 }
 
+// 这里就相当于图形学中过得 fragment_shader 程序  有多少像素点就调用多少次
+// payload 包含 color normal texture viewpos texture_coord
 Eigen::Vector3f normal_fragment_shader(const fragment_shader_payload& payload)
 {
     Eigen::Vector3f return_color = (payload.normal.head<3>().normalized() + Eigen::Vector3f(1.0f, 1.0f, 1.0f)) / 2.f;
@@ -106,7 +107,6 @@ float mymax(float a,float b)
     if(a>b)return a;
     else return b;
 }
-
 
 struct light
 {
@@ -133,7 +133,7 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload& payload)
     auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
 
     std::vector<light> lights = {l1, l2};
-    Eigen::Vector3f amb_light_intensity{10, 10, 10};
+    Eigen::Vector3f amb_light_intensity{100, 100, 100};
     Eigen::Vector3f eye_pos{0, 0, 10};
 
     float p = 150;
@@ -149,13 +149,15 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload& payload)
     {
         // TODO: For each light source in the code, calculate what the *ambient*, *diffuse*, and *specular*
         // components are. Then, accumulate that result on the *result_color* object.
-         float r2 = (light.position - point).dot((light.position - point));
+        float r2 = (light.position - point).dot((light.position - point));
         Eigen::Vector3f l = (light.position - point).normalized();
         Eigen::Vector3f n = normal.normalized();
         Eigen::Vector3f v = (eye_pos - point).normalized();
         Eigen::Vector3f h = (l+v).normalized();
 
+        // Lambertian (Diffuse) Shading  Kd是漫反射扩散系数（物体本身的颜色）
         Eigen::Vector3f diffuse =  (kd * light.intensity[0]/r2) * std::max(0.0f,n.dot(l));
+        // Specular Shading  n 法向量 h 半程向量  p 是柔和衰减系数  h是观察方向和入射光方向的中间向量
         Eigen::Vector3f specular = (ks * light.intensity[0]/r2) * std::pow(std::max(0.f,(n.dot(h))),p);
 
         result_color+=(diffuse+specular);
@@ -202,7 +204,6 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload& payload)
         result_color+=(ambient+diffuse+specular);
 
     }
-
     return result_color * 255.f;
 }
 
@@ -397,7 +398,7 @@ int main(int argc, const char** argv)
     bool loadout = Loader.LoadFile("./models/spot/spot_triangulated_good.obj");
 
     //bunny
-    //bool loadout = Loader.LoadFile("../models/bunny/bunny.obj");
+//    bool loadout = Loader.LoadFile("./models/bunny/bunny.obj");
 
     //cube
     //obj_path = "../models/cube/";
@@ -502,7 +503,7 @@ int main(int argc, const char** argv)
 
         cv::imwrite(filename, image);
 
-        return 0;
+//        return 0;
     }
 
     while(key != 27)
