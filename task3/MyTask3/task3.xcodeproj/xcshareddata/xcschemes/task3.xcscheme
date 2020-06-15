@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "normal"
+            argument = "texture"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

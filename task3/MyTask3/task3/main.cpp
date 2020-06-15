@@ -387,7 +387,7 @@ int main(int argc, const char** argv)
 {
     std::vector<Triangle*> TriangleList;
 
-    float angle = 140.0;
+    float angle = 90.0;
     bool command_line = false;
 
     std::string filename = "output.png";
@@ -523,15 +523,17 @@ int main(int argc, const char** argv)
         cv::imshow("image", image);
         cv::imwrite(filename, image);
         key = cv::waitKey(10);
-
-        if (key == 'a' )
-        {
-            angle -= 0.1;
-        }
-        else if (key == 'd')
-        {
-            angle += 0.1;
-        }
+        
+        angle += 30;
+        std::cout << "angle" << angle << std::endl;
+//        if (key == 'a' )
+//        {
+//            angle -= 0.1;
+//        }
+//        else if (key == 'd')
+//        {
+//            angle += 0.1;
+//        }
 
     }
     return 0;
