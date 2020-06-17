@@ -15,6 +15,18 @@
 ### 球体映射到立方体
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/texture10.png)
 
+### Bump Mapping 凹凸贴图
+一维场景
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bump.jpg)
+
+先求切线 得到导数是 dp, 法线和切线垂直， 所以法线是 (-dp, 1)
+
+二维场景
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bump2.jpg)
+导数在二维的情况下叫做梯度  先求水平方向上的变化dp/du 再求垂直方向上的变化
+
+这里的 h() 函数表示高度  c1 c2 表示缩放常数
+
 
 ### 位移贴图
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/texture11.png)

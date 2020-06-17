@@ -272,7 +272,7 @@ Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
          dV = kh * kn * (payload.texture->getColor(u,1).norm()-payload.texture->getColor(u,v).norm());
     }
 
-    Eigen::Vector3f ln(-dU,-dV,1);
+    Eigen::Vector3f ln(-dU,-dV,1); // -dU -dV 是切线的方向 法线和切线垂直 所以加个负号
     // Position p = p + kh * n * h(u,v)
     // Normal n = TBN * ln
     if(u<=1 && v<=1)
