@@ -502,7 +502,6 @@ int main(int argc, const char** argv)
         cv::cvtColor(image, image, cv::COLOR_RGB2BGR);
 
         cv::imwrite(filename, image);
-
 //        return 0;
     }
 
