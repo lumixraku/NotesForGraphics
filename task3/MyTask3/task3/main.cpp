@@ -311,7 +311,8 @@ Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
     return result_color * 255.f;
 }
 
-
+// bump fragment 略微移动法线 
+// bump 的时候 texture 是 hmap.jpg
 Eigen::Vector3f bump_fragment_shader(const fragment_shader_payload& payload)
 {
 
@@ -355,16 +356,19 @@ Eigen::Vector3f bump_fragment_shader(const fragment_shader_payload& payload)
     tbn<<t,b,n;
     float u = payload.tex_coords.x();
     float v = payload.tex_coords.y();
-    float w = payload.texture->width;
-    float h = payload.texture->height;
+    float w = payload.texture->width; // 800
+    float h = payload.texture->height; // 800
     //std::cout<<u<<"---"<<v<<'\n';
     float dU,dV;
+    
+    // uv的范围是 [0,1]
+    // uv坐标+1像素 仍在贴图中 (1像素要转为uv坐标中的尺度 )
     if((u+1.0/w)<=1 && (v+1/h)<=1)
     {
          dU = kh * kn * (payload.texture->getColor(u+1.0/w,v).norm()-payload.texture->getColor(u,v).norm());
          dV = kh * kn * (payload.texture->getColor(u,v+1/h).norm()-payload.texture->getColor(u,v).norm());
     }
-    else if ((u+1.0/w)>1)
+    else if ((u+1.0/w)>1)  // u+1像素超出贴图了
     {
          dU = kh * kn * (payload.texture->getColor(1,v).norm()-payload.texture->getColor(u,v).norm());
          dV = kh * kn * (payload.texture->getColor(u,v+1/h).norm()-payload.texture->getColor(u,v).norm());
