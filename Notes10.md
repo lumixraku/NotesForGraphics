@@ -29,15 +29,31 @@
 
 
 ### 位移贴图
+凹凸贴图和位移贴图都是通过一张纹理贴图定义一个点的相对高度
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/texture11.png)
 
-位移贴图真的移动了顶点, 凹凸贴图只是改了法线,那么在物体的边缘上就会穿帮(边缘还是很光滑)
+位移贴图真的移动了顶点, 凹凸贴图只是改了法线,那么在物体的边缘上就会穿帮(边缘还是很光滑) 从影子的部分就可以看出来
+
+另外需要说明： 使用位移贴图之前要保证模型本身的三角形足够细， 不然和纹理中的变换对应不上。因为位移贴图是改变模型中顶点位置（也就是每一个三角形中的点）
+
 
 ## 3D 纹理
 定义了三维空间中的点的颜色
 
 https://zh.wikipedia.org/wiki/Perlin%E5%99%AA%E5%A3%B0
 
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/3dtexture.jpg)
+
+三维纹理广泛运用在体积渲染中, 之前的光照模型就是在考虑一个表面.
+
+
+PS: 纹理还可以定义阴影
+下面有一个环境光遮蔽贴图
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/aotexture.jpg)
 
 ## 物体几何表示
 
