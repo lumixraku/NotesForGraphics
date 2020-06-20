@@ -44,11 +44,17 @@ https://www.jianshu.com/p/f7f3e7b6ebf5
 
 给定三个点: 生成二次贝塞尔曲线
 
-t 代表时间    b02 这个点表示时间t的时候 曲线所在的位置
+t 代表时间    
+
+b02 这个点表示时间t的时候 曲线所在的位置
 
 PS 曲线并不一定要经过控制点 只要经过起始点和结束点就行
 
 ## de castelju 算法
+绘制贝塞尔曲线的方法 
+
+https://blog.csdn.net/lafengxiaoyu/article/details/56294678
+
 https://blog.csdn.net/venshine/article/details/51758841
 
 https://github.com/venshine/BezierMaker
@@ -63,19 +69,53 @@ https://github.com/venshine/BezierMaker
 
 递归扫什么程度呢?    到三点在一条线上的时候 (就上一个图那样)
 
+四个控制点的贝塞尔曲线， 也就是三次贝塞尔曲线 Cubic Bezier
+
 ### 算法的数学表示
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier2.png)
 
-t = 0的时候 就应该是b0  t = 1 的时候 就是 b1
+t = 0的时候 就应该是b0  
 
-### 贝塞尔曲线在仿射变换下的性质  (放射不变性) :
+t = 1 的时候 就是 b1
+
+b01t 是 b0和b1做线性插值得到
+
+b0 应该时间t 距离b0 的距离 也就是 1-t
+
+b02 是 b01 b11 做线性插值得到
+
+
+## 伯恩斯坦多项式
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier3.jpg)
+
+该公式描述了 n+1 个（从0～1）控制点
+
+下面的公式是一个二项分布的多项式  竖着的(n, i)表示 n 里面选择 i
+
+1 3 3 1 二项式定理（杨辉三角）
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier3.jpg)
+贝塞尔曲线当然不仅仅是局限在平面上， 3维空间中的点一样适用
+
+
+## 贝塞尔曲线的性质
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier5.jpg)
+性质1 t=0时在起点 t=t时在终点
+
+性质2 对于4个控制点的三次贝塞尔曲线来说， b'(0)的切线是 3(b1 - b0)???
+
+性质3 贝塞尔曲线在仿射变换下的性质  (放射不变性) :
+```
 对控制点做了仿射变换之后, 这些控制点形成的贝塞尔曲线  ==  根据这些控制点做出贝塞尔曲线做仿射变换之后得到的曲线.
 但是其他变换不行, 比如投影变换
+```
+性质4 画出的贝塞尔曲线一定在控制点形成的凸包内
 
-### 凸包性质:
+## 凸包:
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier3.png)
-画出的贝塞尔曲线一定在控制点形成的凸包内
+
 
 
 一般人们习惯使用4个控制点去定义一条曲线, 下面这个曲线由多段贝塞尔曲线构成

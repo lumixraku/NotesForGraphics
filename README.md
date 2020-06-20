@@ -33,7 +33,7 @@ I'm using Xcode as my C++ IDE, create a command line Project for Task1.
 
 Add this to your project.
 
-Add following to `Header Search Paths` (Eigen requires the first dependency.)
+Add following to `Build Settings ---> Header Search Paths` (Eigen requires the first dependency.)
 ```
 /usr/local/include
 /usr/local/Cellar/opencv@2/2.4.13.7_7/include
@@ -86,7 +86,7 @@ Set `C++ Standard Library` to `... LLVM C++ ...`
 ### read file
 Another thing you have to know is Xcode not running your CPP code in your work directory, but a very deep path like `~/Library/Developer/Xcode/DerivedData/task3-ewyxlatyzwtvlgcrtquhcxutpryf/Build/Products/Debug`
 
-you can find this path under `File explorer --->  Products` then right click  your app `Show in finder`
+    you can find this path under `File explorer --->  Products` then right click  your app `Show in finder`
 
 So, if you want to read file, you have to copy your file to certain path.
 

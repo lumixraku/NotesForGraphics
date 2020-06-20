@@ -56,7 +56,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "bump"
+            argument = "phong"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
