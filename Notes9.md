@@ -8,10 +8,11 @@
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/barycentric1.jpg)
 
-求解
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/barycentric2.jpg)
 
-这里还可以看 [重心坐标](https://zhuanlan.zhihu.com/p/58199366)
+这里还可以看 
+[重心坐标](https://zhuanlan.zhihu.com/p/58199366)
+
+[重心坐标](https://zhuanlan.zhihu.com/p/65495373)
 
 ### 几何性质
 
@@ -21,7 +22,7 @@
 
 那么三角形重心的 重心坐标就是 α β γ 都等于 1/3 的时候, 也就是三个划分的三角形面积相同的时候.
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/barycentric2.jpg)
+
 
 
 ### 用途
@@ -33,6 +34,12 @@
 
 https://zhuanlan.zhihu.com/p/65495373
 在图形学中，利用重心坐标在三角形内部进行任何属性（位置、纹理坐标、颜色、法线、深度、材质属性..）的插值。一般我们通过其他步骤都会得到三角形顶点上的属性，但继续计算时需要用到三角形内部的某点的属性值，利用重心坐标可以得到三角形内部该值的平滑过渡。
+
+打比方说，P1处纹理坐标为texcoord1，P2处为texcoord2，P3处为texcoord3，则P处纹理坐标就是 `texcoord=w1*texcoord1+w2*texcoord2+w3*texcoord3`
+
+Read More 
+
+
 
 
 ## 纹理的应用

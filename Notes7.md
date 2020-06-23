@@ -16,7 +16,7 @@
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/zbuffer.jpg)
 
 
-O(n) 的计算深度的方法  每个物体诸葛遍历, 每个像素取最近的那个
+O(n) 的计算深度的方法  每个物体逐个遍历, 每个像素取最近的那个
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/zbuffer2.jpg)
 

@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "932C94A1-C619-4507-BE92-1AB99E1199A4"
+            uuid = "0AC2C45A-3BF8-40AE-ADD4-F40FC9B67781"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "task3/main.cpp"
+            filePath = "task3/rasterizer.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "phong_fragment_shader(payload)"
-            landmarkType = "9">
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "rst::rasterizer::rasterize_triangle(t, view_pos)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

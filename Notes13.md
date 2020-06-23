@@ -60,14 +60,20 @@ Whitted Style: 多次递归反射, 就是在模拟光线在不断弹射的过程
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing7.png)
 
-### 和显式表面怎么做呢?
+### 和显式表面求交点怎么做呢?
 刚才 f(xx) = 0 是一个隐式表面的几何表达形式.
 
 显式表面其实是求光线和三角形面的交点.
 
 PS
 
-如果一个点在封闭物体内部, 不论物体形状如何, 从这个点出发任意一条射线, 与物体的交点一定是奇数
+如果一个点在封闭物体内部, 不论物体形状如何, 从这个点出发任意一条射线, 与物体的交点一定是奇数. 偶数的话一定是在物体外。 
+
+根据这个性质，可以用来判断是否在一个点是否在物体内部
+
+该性质2D 3D 都满足
+
+More 奇偶规则和非零缠绕规则  https://blog.csdn.net/g0ose/article/details/54933038
 
 ### 和三角形面的交点
 
@@ -80,18 +86,29 @@ PS
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing8.png)
 
-两个向量点乘是0  表示相互垂直   (p' 是平面上任意一个点)
+通过点法式（通过法线和一个点定义的平面）（图中左边的式子） 很容易判断一个点是不是在平面上
 
+PS : 两个向量点乘是0  表示相互垂直   (p' 是平面上任意一个点)
 
-和前面和球球交点问题一样, 交点即在平面上 有在光线上. 因此两个公式都满足.
+More http://kjwy.5any.com/gdsx22/content/ch01/gdsx070501.htm
+
+和前面和球球交点问题一样, 交点即在平面上 又在光线上. 因此两个公式都满足.
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing9.png)
+
+之后判断点是否在三角形内（之前在点乘的时候介绍过方法）
+
 
 ### 上面的方式是先和平面求交点, 再判断是否在三角形内. 有么有更加直接的办法呢?
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing10.png)
 
-注意公式中的 1 - b1 -b2 , 点既然在三角形内, 那么这个点可以使用中心坐标去表示.  (重心坐标的一个性质就是 b1+ b2 + b3 = 1)
+MT 算法， 如果有解(满足 t > 0 && b1 >0 && b2 >0 && 1 - b0 - b2 > 0 )，得到的结果是一个重心坐标。
 
- 剩下的部分就是接方程组了
+注意公式中的 1 - b1 -b2 , 点既然在三角形内, 那么这个点可以使用重心坐标去表示.  (重心坐标的一个性质就是 b1+ b2 + b3 = 1)
+
+剩下的部分就是解方程组了
+
+图中底下一大串是用来判断方程组是否有解
+More 克莱姆法则  https://zh.wikipedia.org/wiki/%E5%85%8B%E8%90%8A%E5%A7%86%E6%B3%95%E5%89%87
 
 
 ## AABB 轴对齐包围盒

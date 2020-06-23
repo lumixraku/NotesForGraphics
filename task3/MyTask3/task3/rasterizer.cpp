@@ -273,7 +273,7 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eig
     //Vector3f normal[3]; //normal vector for each vertex
 
     //经过之前的处理后，传入三角形screen_space的坐标t.v以及viewspace的顶点坐标。
-    auto v = t.toVector4();
+    auto v = t.toVector4(); // w 是第四个分量  也就是  x y z w  齐次坐标
     int xmin = 0;
     int xmax = 0;
     int ymin = 0;
@@ -294,6 +294,9 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eig
     xmax = xmaxf +1;
     ymin = yminf;
     ymax = ymaxf +1;
+    
+    // xmin ～ xmax 表示三角形的点x 的变化范围。
+    // xmin xmax ymin ymax 构成了三角形包围盒
 
     // TODO: From your HW3, get the triangle rasterization code.
     // TODO: Inside your rasterization loop:
@@ -312,15 +315,19 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eig
             if(insideTriangle(i+0.5,j+0.5,t.v)) 
             {
                 //Depth interpolated
-            auto[alpha, beta, gamma] = computeBarycentric2D(i, j, t.v);
+                // alpha, beta, gamma 都是 float。表示重心坐标的系数 点p = alpha*V1 + beta*V2 + gamma*V3
+            auto[alpha, beta, gamma] = computeBarycentric2D(i, j, t.v); // t.v 表示三角形的三个顶点  是一个数组
 
-            float Z = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());
+            // .w 分量是 1
+            // 这是一个理论上就是 1 的值 (因为重心坐标各个系数之和就是 1) // 实际上因为存在误差， Z 是一个特别接近于1 的值， 同理因为误差 alpha +  beta + gamma 也不是1 而是十分接近1 的值
+            float Z = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());  
+                         
             float zp = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
             zp*=Z;
 
             if(zp < depth_buf[get_index(i,j)])
             {
-                depth_buf[get_index(i,j)] = zp;
+                depth_buf[get_index(i,j)] = zp;// 深度信息  总是取最小值  也就是离的越近？？
                 auto interpolated_color = interpolate(alpha, beta, gamma, t.color[0], t.color[1], t.color[2], 1);
                 auto interpolated_normal = interpolate(alpha, beta, gamma,t.normal[0],t.normal[1],t.normal[2],1).normalized();
                 auto interpolated_texcoords = interpolate(alpha, beta, gamma,t.tex_coords[0],t.tex_coords[1],t.tex_coords[2],1);
