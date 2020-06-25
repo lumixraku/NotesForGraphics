@@ -1,9 +1,26 @@
 # Lecture 05 Rasterization 光栅化
 
+
 Part I Triangle
 
 ## What should we do after MVP ?  视体(Frustum) 到屏幕
 经过了Viewing Transformation(观测变换, 其中包括view transformation视图变换  project transformation 投影变换)之后, 就得到了标准视体, 也就是一个范围是[-1, 1]的立方体盒子.
+
+说一下投影变换的尾巴
+
+## 定义视椎体
+
+通过 l r b t 定义视椎体的一个面
+
+没有的话，可以通过 fov 和 aspect ratio 计算出 l r b t
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/fov4.jpg)
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/fov3.jpg)
+
+
+
+
 
 接下里, 就需要投射到屏幕上.
 

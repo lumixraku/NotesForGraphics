@@ -10,13 +10,16 @@
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/painter2.jpg)
 
+深度缓存每一个像素计算最浅深度
 
 用 0 ~ 1 表示远近程度, 越近越接近0,  颜色越黑
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/zbuffer.jpg)
 
 
-O(n) 的计算深度的方法  每个物体逐个遍历, 每个像素取最近的那个
+O(n) 的计算深度的方法  每个物体每个三角形逐个遍历, 每个像素取深度最浅的那个
+
+一开始的时候， 每一个像素的深度都是无穷大. 另外深度缓存是每一帧都会更新
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/zbuffer2.jpg)
 

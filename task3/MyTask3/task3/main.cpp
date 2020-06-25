@@ -19,6 +19,23 @@ Eigen::Matrix4f get_view_matrix(Eigen::Vector3f eye_pos)
                  0,0,0,1;
 
     view = translate*view;
+    //  array = {
+    //   [0] = 1
+    //   [1] = 0
+    //   [2] = 0
+    //   [3] = 0
+    //   [4] = 0
+    //   [5] = 1
+    //   [6] = 0
+    //   [7] = 0
+    //   [8] = 0
+    //   [9] = 0
+    //   [10] = 1
+    //   [11] = 0
+    //   [12] = 0
+    //   [13] = 0
+    //   [14] = -10
+    //   [15] = 1
 
     return view;
 }
@@ -65,14 +82,20 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio, float z
     Eigen::Matrix4f m1;
     Eigen::Matrix4f m2;
     Eigen::Matrix4f m3;
+
+    // 透视投影矩阵
     m1<< zNear,0,0,0,
         0,zNear,0,0,
         0,0,zNear + zFar,-zNear*zFar,
         0,0,1,0;
+
+    // 位移矩阵
     m2<<1,0,0,0,
         0,1,0,0,
         0,0,1,-(zNear+ zFar)/2,
         0,0,0,1;
+
+    // 缩放矩阵
     m3<<2/(r-l),0,0,0,
         0,2/(t-b),0,0,
         0,0,2/(zNear -zFar),0,
@@ -134,7 +157,7 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload& payload)
 
     std::vector<light> lights = {l1, l2};
     Eigen::Vector3f amb_light_intensity{100, 100, 100};
-    Eigen::Vector3f eye_pos{0, 0, 10};
+    Eigen::Vector3f eye_pos{0, 0, 0};
 
     float p = 150;
 

@@ -48,9 +48,13 @@ z 是 x ✖️ y 得到  绕 z 旋转, 和 x ✖️ y 方向一致
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/transform7.jpg)
 
+该公式描述了 空间内的任意一个向量V, 绕旋转轴k 旋转 θ 角度得到新向量 Vθ 的过程.
 
-空间内的任意一个向量V, 绕旋转轴k 旋转 θ 角度得到新向量 Vθ 的过程.
+PS 绕旋转轴k 旋转 θ 角度  似乎看起来条件不够
 
+实际上我们默认绕旋转轴k  就是这个物体在这个轴的原点作为起点做旋转
+
+如果想绕着任意一个点旋转， 就是先将物体移动到轴的原点， 用上面的公式做了旋转之后再把物体移动回去
 
 
 ### 四元数
@@ -58,7 +62,7 @@ z 是 x ✖️ y 得到  绕 z 旋转, 和 x ✖️ y 方向一致
 - 解决死锁问题
 - 平滑插值
 
-比如开始时物体旋转了15° , 最终目标物体要旋转25°, 中间如何平滑过度呢? 此刻就需要四元数.
+比如开始时物体旋转了15° , 最终目标物体要旋转25°, 中间如何平滑过度呢? 旋转矩阵矩阵并不适合做插值。此刻就需要四元数.
 
 ## view transformation
 - view camera transformation
@@ -66,7 +70,9 @@ z 是 x ✖️ y 得到  绕 z 旋转, 和 x ✖️ y 方向一致
   - 正交投影
   - 透视投影
 
-## view/camera transformation 视图变换  (也被称为 modelview transformation )
+## view/camera transformation 视图变换 
+
+也被称为 modelview transformation 
 
 定义一个相机需要
 - pos
@@ -75,7 +81,9 @@ z 是 x ✖️ y 得到  绕 z 旋转, 和 x ✖️ y 方向一致
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/view0.jpg)
 
+向量 e 表示相机的位置
 
+向量 g 表示lookat 的方向 gaze
 
 先让相机移动到原点 并且使得相机看向 -z 的方向, up 方向是 y 的正方向  (相机所拍的物体跟着相机都做上面的变换)
 
@@ -84,10 +92,23 @@ z 是 x ✖️ y 得到  绕 z 旋转, 和 x ✖️ y 方向一致
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/view.jpg)
 
-因此要做下面的旋转
+把相机放到上面规定的位置， 因此要做下面的旋转 Mview
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/view1.jpg)
 
+rotate g to -Z 是因为根据约定， 相机永远看向 -Z 方向
+
+rotate t to Y up方向旋转到 Y 方向
+
+g to -Z 并不好写，因为 g 是一个很任意的向量， -Z 是一个轴，也就是一个单位向量。
+
+但是反过来很好写  我们先写出 X Y Z 到相机位置的变换  那么相机到 X Y Z 就是刚才的逆变换
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/view2.jpg)
+
+PS: Mview = Rview ✖️ Tview   先做平移变换 再做旋转变换
+
+PS: 旋转矩阵是正交矩阵
 
 
 
@@ -176,6 +197,7 @@ n    0    0    0
 
 ## 另外最后课程中提到了一个问题
 经过这个变换之后  两个面中间的 z 会怎么改变? 是更偏向 n 还是更偏向 f
+
 
 
 

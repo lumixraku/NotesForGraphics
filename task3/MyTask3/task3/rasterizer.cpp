@@ -171,12 +171,17 @@ static std::tuple<float, float, float> computeBarycentric2D(float x, float y, co
     return {c1,c2,c3};
 }
 
+// 这里的变换还可以参考 https://zhuanlan.zhihu.com/p/45757899
 void rst::rasterizer::draw(std::vector<Triangle *> &TriangleList) {
 
     float f1 = (50 - 0.1) / 2.0;
     float f2 = (50 + 0.1) / 2.0;
 
     Eigen::Matrix4f mvp = projection * view * model;
+    // model 是旋转j矩阵
+    // projection 是透视投影矩阵
+    // view 是一个平移矩阵
+    
     for (const auto& t:TriangleList)
     {
         Triangle newtri = *t;
@@ -217,7 +222,8 @@ void rst::rasterizer::draw(std::vector<Triangle *> &TriangleList) {
         
 
 
-        //Viewport transformation
+        //Viewport transformation // 从标准盒子到屏幕
+        // [-1, 1] 到 [0, width] X [0, height]
         for (auto & vert : v)
         {
             vert.x() = 0.5*width*(vert.x()+1.0);
@@ -320,8 +326,7 @@ void rst::rasterizer::rasterize_triangle(const Triangle& t, const std::array<Eig
 
             // .w 分量是 1
             // 这是一个理论上就是 1 的值 (因为重心坐标各个系数之和就是 1) // 实际上因为存在误差， Z 是一个特别接近于1 的值， 同理因为误差 alpha +  beta + gamma 也不是1 而是十分接近1 的值
-            float Z = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());  
-                         
+            float Z = 1.0 / (alpha / v[0].w() + beta / v[1].w() + gamma / v[2].w());                         
             float zp = alpha * v[0].z() / v[0].w() + beta * v[1].z() / v[1].w() + gamma * v[2].z() / v[2].w();
             zp*=Z;
 

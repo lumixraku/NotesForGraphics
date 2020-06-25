@@ -1,0 +1,203 @@
+mm
+(std::__1::array<Eigen::Matrix<float, 3, 1, 0, 3, 1>, 3>) $0 = {
+  __elems_ = {
+    [0] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.911120116, [1] = -0.993237495, [2] = -10.7932196)
+          }
+        }
+      }
+    }
+    [1] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 1.06075752, [1] = -1.01170003, [2] = -10.7828026)
+          }
+        }
+      }
+    }
+    [2] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.907610058, [1] = -1.02996004, [2] = -10.7240953)
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+*t
+(Triangle) $3 = {
+  v = {
+    [0] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+        m_storage = {
+          m_data = (array = (0.317288011, -0.397294998, 0.364448011, 1))
+        }
+      }
+    }
+    [1] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+        m_storage = {
+          m_data = (array = (0.313120991, -0.404680014, 0.424302995, 1))
+        }
+      }
+    }
+    [2] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+        m_storage = {
+          m_data = (array = (0.289638013, -0.411983997, 0.363043994, 1))
+        }
+      }
+    }
+  }
+  color = {
+    [0] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0, [1] = 0, [2] = 0)
+          }
+        }
+      }
+    }
+    [1] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0, [1] = 0, [2] = 0)
+          }
+        }
+      }
+    }
+    [2] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0, [1] = 0, [2] = 0)
+          }
+        }
+      }
+    }
+  }
+  tex_coords = {
+    [0] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 2, 1, 0, 2, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.800374985, [1] = 0.667456985)
+          }
+        }
+      }
+    }
+    [1] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 2, 1, 0, 2, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.789583981, [1] = 0.668214976)
+          }
+        }
+      }
+    }
+    [2] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 2, 1, 0, 2, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.799923002, [1] = 0.663932979)
+          }
+        }
+      }
+    }
+  }
+  normal = {
+    [0] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.574467003, [1] = -0.816209971, [2] = -0.0615510009)
+          }
+        }
+      }
+    }
+    [1] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.563539028, [1] = -0.826017022, [2] = -0.0109649999)
+          }
+        }
+      }
+    }
+    [2] = {
+      Eigen::PlainObjectBase<Eigen::Matrix<float, 3, 1, 0, 3, 1> > = {
+        m_storage = {
+          m_data = {
+            array = ([0] = 0.420329988, [1] = -0.904760003, [2] = -0.0687939972)
+          }
+        }
+      }
+    }
+  }
+  tex = 0x0000000000000000
+}
+
+v
+(Eigen::Vector4f [3]) $5 = {
+  [0] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (-2.19963884, 2.39788771, 11.0368786, -10.7932196))
+      }
+    }
+  }
+  [1] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (-2.56089568, 2.4424603, 11.0264196, -10.7828026))
+      }
+    }
+  }
+  [2] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (-2.19116497, 2.48654366, 10.9674768, -10.7240953))
+      }
+    }
+  }
+}
+
+v 齐次坐标
+(Eigen::Vector4f [3]) $6 = {
+  [0] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (0.203798205, -0.222166121, -1.02257514, -10.7932196))
+      }
+    }
+  }
+  [1] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (0.237498149, -0.226514429, -1.02259314, -10.7828026))
+      }
+    }
+  }
+  [2] = {
+    Eigen::PlainObjectBase<Eigen::Matrix<float, 4, 1, 0, 4, 1> > = {
+      m_storage = {
+        m_data = (array = (0.204321668, -0.231865123, -1.02269483, -10.7240953))
+      }
+    }
+  }
+}
