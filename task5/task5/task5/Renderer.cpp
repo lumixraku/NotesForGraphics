@@ -86,17 +86,21 @@ std::optional<hit_payload> trace(
 {
     float tNear = kInfinity;
     std::optional<hit_payload> payload;
+
+    // 
     for (const auto & object : objects)
     {
         float tNearK = kInfinity;
         uint32_t indexK;
         Vector2f uvK;
+
+        // 调用的三角形 OR 球体 intersect 方法
         if (object->intersect(orig, dir, tNearK, indexK, uvK) && tNearK < tNear)
         {
             payload.emplace();
             payload->hit_obj = object.get();
             payload->tNear = tNearK;
-            payload->index = indexK;
+            payload->index = indexK; // 第K个三角形
             payload->uv = uvK;
             tNear = tNearK;
         }
@@ -227,9 +231,9 @@ void Renderer::Render(const Scene& scene)
             // TODO: Find the x and y positions of the current pixel to get the direction
             // vector that passes through it.
             // Also, don't forget to multiply both of them with the variable *scale*, and
-            // x (horizontal) variable with the *imageAspectRatio*      
-            x = imageAspectRatio * ( 2*float(i +0.5f) / (float)scene.width - 1 );
-            y = 1 - ( 2 *float(j+0.5f) / float(scene.height) );
+            // x (horizontal) variable with the *imageAspectRatio*
+            x = imageAspectRatio * (2 * float(i) / (float)scene.width - 1); // 坐标从 1280 * 800 转为 [0, 1] 再转为 [-1, 1] 再转为 [-imageAspectRatio, imageAspectRatio]
+            y = 1 - ( 2 *float(j) / float(scene.height) ); // 做成数学坐标系  越往上 y 值越大  [1, ]
             //std::cout << x <<"---"<<y <<'\n';
             Vector3f dir = Vector3f(x, y, -1); // Don't forget to normalize this direction!
             dir = normalize(dir);

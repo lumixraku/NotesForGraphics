@@ -42,13 +42,28 @@ class MeshTriangle : public Object
 public:
     MeshTriangle(const Vector3f* verts, const uint32_t* vertsIndex, const uint32_t& numTris, const Vector2f* st)
     {
+        
+        // verts 长度是 4
+        // verts 就是 main 中传入的4个点的坐标
+        
+        // 不能用这样的方式去获取数组的长度。sizeof(vertsIndex)/sizeof(vertsIndex[0]) = 2 因为这里的数组是一个指针， 指向的就是第一个元素的位置
+        // 用数组下标去取可以得到 0 1 3 1 2 3 0 1 看起来似乎数组长度是 8。  b不过前6个就是main 中传入的参数
+        // numTris = 2
+        // st 长度是 4
+        
+        
         uint32_t maxIndex = 0;
         for (uint32_t i = 0; i < numTris * 3; ++i)
             if (vertsIndex[i] > maxIndex)
                 maxIndex = vertsIndex[i];
+        // maxIndex 是 vertsIndex 的最大值
+        // 此刻 maxIndex 是 3
+                
         maxIndex += 1;
+        
+        // 此刻 maxIndex = 4  numTris = 2  verts 是包含4个顶点的数组
         vertices = std::unique_ptr<Vector3f[]>(new Vector3f[maxIndex]);
-        memcpy(vertices.get(), verts, sizeof(Vector3f) * maxIndex);
+        memcpy(vertices.get(), verts, sizeof(Vector3f) * maxIndex); // 相当于数组复制 verts 中的数据复制到 vertices 中
         vertexIndex = std::unique_ptr<uint32_t[]>(new uint32_t[numTris * 3]);
         memcpy(vertexIndex.get(), vertsIndex, sizeof(uint32_t) * numTris * 3);
         numTriangles = numTris;
@@ -62,17 +77,23 @@ public:
         bool intersect = false;
         for (uint32_t k = 0; k < numTriangles; ++k)
         {
+            // v0 v2 v2 是三角形的三个点
             const Vector3f& v0 = vertices[vertexIndex[k * 3]];
             const Vector3f& v1 = vertices[vertexIndex[k * 3 + 1]];
             const Vector3f& v2 = vertices[vertexIndex[k * 3 + 2]];
+
+
             float t, u, v;
+
+            // 得到光线和三角形的交点  光线 r(t)=o+td  t 就是 tnear
+            // t u v 都是引用
             if (rayTriangleIntersect(v0, v1, v2, orig, dir, t, u, v) && t < tnear)
             {
                 tnear = t;
                 uv.x = u;
                 uv.y = v;
                 index = k;
-                intersect |= true;
+                intersect |= true; // |= 按位或且赋值运算符
             }
         }
 

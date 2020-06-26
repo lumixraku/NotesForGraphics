@@ -101,7 +101,9 @@ More http://kjwy.5any.com/gdsx22/content/ch01/gdsx070501.htm
 ### 上面的方式是先和平面求交点, 再判断是否在三角形内. 有么有更加直接的办法呢?
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing10.png)
 
-MT 算法， 如果有解(满足 t > 0 && b1 >0 && b2 >0 && 1 - b0 - b2 > 0 )，得到的结果是一个重心坐标。
+Möller Trumbore MT 算法
+
+如果有解(满足 t > 0 && b1 >0 && b2 >0 && 1 - b0 - b2 > 0 )，得到的结果是一个重心坐标。
 
 注意公式中的 1 - b1 -b2 , 点既然在三角形内, 那么这个点可以使用重心坐标去表示.  (重心坐标的一个性质就是 b1+ b2 + b3 = 1)
 

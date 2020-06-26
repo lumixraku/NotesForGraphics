@@ -25,6 +25,8 @@ int main()
     Vector3f verts[4] = {{-5,-3,-6}, {5,-3,-6}, {5,-3,-16}, {-5,-3,-16}};
     uint32_t vertIndex[6] = {0, 1, 3, 1, 2, 3};
     Vector2f st[4] = {{0, 0}, {1, 0}, {1, 1}, {0, 1}};
+
+    // 后面这些参数就是 MeshTriangle 构造函数所需参数
     auto mesh = std::make_unique<MeshTriangle>(verts, vertIndex, 2, st);
     mesh->materialType = DIFFUSE_AND_GLOSSY;
 
