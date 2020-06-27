@@ -108,7 +108,7 @@ After you click running, you will see models copied into `~/Library/Developer/Xc
 
 First argument is `output.png`. Second argument is `texture or phone or normal ..`
 
-## for task5
+## for task5 6
 ### No template named 'optional' in namespace 'std'
 
 Set `C++ Language Dialect` to `C++ 17 [std=C++17]`
@@ -116,3 +116,11 @@ Set `C++ Language Dialect` to `C++ 17 [std=C++17]`
 Set `C++ Standard Library` to `... LLVM C++ ...`
 
 
+## for task 7 
+omp.h
+
+`brew install libomp`
+
+/usr/local/Cellar/libomp/10.0.0/include
+
+https://stackoverflow.com/questions/25990296/how-to-include-omp-h-in-os-x
