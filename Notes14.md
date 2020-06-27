@@ -89,9 +89,10 @@
 
 ## BVH  Bounding Volume Hierarchy
 
+从物体开始划分, 而不是从空间开始划分. 一开始将一堆三角形划分成两个部分。然后分别对这两堆三角形再次划分。
+
 现代图形学中, 不论离线还是实时渲染,  AABB 加速基本上都使用的这种算法
 
-从物体开始划分, 而不是从空间开始划分.
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh1.png)
 
@@ -99,20 +100,25 @@
 
 实际的物体都记录在叶子节点里
 
-一个好处: 一个三角形只可能在一个包围盒中.
+一个好处: 一个三角形只可能在一个包围盒中. 解决了 KD tree 的问题
 
+但是 BVH 对于空间划分出的盒子有可能相交
+
+PS BVH对节点的划分： 可以每次都是根据最长的轴最划分  也可以每次都找中间的三角形做划分
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh2.png)
 
 这里的median 怎么理解呢? 就是不管按照何种方式去划分三角形, 最后划分出的两堆三角形数量差不多.
 (平衡树的概念, 避免树的深度过高, 这样查找起来才效率才高. )
 
+寻找中位数算法： 任意一列无序数， 找到第N 大的数，有一种 O(n) 的算法可以解决  快速选择算法（受到快速排序的算法的启发）
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bvh3.png)
 
 KD tree 是对空间划分, 物体可能即在左边又在右边
 
 BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间可能有交集.  不需要计算三角形和包围盒如何相交
+
 
 
 ## 辐射度量学

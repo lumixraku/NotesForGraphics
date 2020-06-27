@@ -97,7 +97,7 @@ check this https://mmquant.net/working-directories-and-build-locations-with-xcod
 
 I am now using option2 for task3.
 
-Set `Copy Files ---> Destination` to `Products Directory`
+In `TARGETS ---> Build Phases`, Set `Copy Files ---> Destination` to `Products Directory`
 
 and set subpath to empty. Click `+` to choose your models folder.
 
