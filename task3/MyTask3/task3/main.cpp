@@ -74,7 +74,9 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio, float z
     // Then return it.
     float eye_angle = eye_fov *MY_PI / 180;
     float t,b,l,r;
-    t = - zNear * tan(eye_angle /2);//------
+
+    // 原本是 -zNear * tan(eye_angle /2);
+    t = abs(zNear) * tan(eye_angle /2);//------
     r = t * aspect_ratio;
     l = -r;
     b = -t;
@@ -152,8 +154,8 @@ Eigen::Vector3f texture_fragment_shader(const fragment_shader_payload& payload)
     Eigen::Vector3f kd = texture_color / 255.f;
     Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
 
-    auto l1 = light{{20, 20, 20}, {500, 500, 500}};
-    auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
+    auto l1 = light{{20, 20, -20}, {500, 500, 500}};
+    auto l2 = light{{20, 20, 0}, {500, 500, 500}};
 
     std::vector<light> lights = {l1, l2};
     Eigen::Vector3f amb_light_intensity{100, 100, 100};
@@ -196,13 +198,15 @@ Eigen::Vector3f phong_fragment_shader(const fragment_shader_payload& payload)
     Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
     Eigen::Vector3f kd = payload.color;
     Eigen::Vector3f ks = Eigen::Vector3f(0.7937, 0.7937, 0.7937);
-
-    auto l1 = light{{20, 20, 20}, {500, 500, 500}};
+    
+    
+    
+    auto l1 = light{{20, 20, -20}, {500, 500, 500}};
     auto l2 = light{{-20, 20, 0}, {500, 500, 500}};
 
     std::vector<light> lights = {l1, l2};
-    Eigen::Vector3f amb_light_intensity{10, 10, 10};
-    Eigen::Vector3f eye_pos{0, 0, 10};
+    Eigen::Vector3f amb_light_intensity{30, 30, 30};
+    Eigen::Vector3f eye_pos{0, 0, -10};
 
     float p = 150;
 
@@ -521,7 +525,12 @@ int main(int argc, const char** argv)
         r.clear(rst::Buffers::Color | rst::Buffers::Depth);
         r.set_model(get_model_matrix(angle,2.5));
         r.set_view(get_view_matrix(eye_pos));
-        r.set_projection(get_projection_matrix(45.0, 1, 0.1, 50));
+
+        // 原本是 get_projection_matrix(45.0, 1, 0.1, 50)
+        // 但是我不太理解，因为说过相机看往 -Z 方向
+        // 所以我改成了 get_projection_matrix(45.0, 1, -0.1, -50)
+        // 相应的get_projection_matrix 关于 t 的值也改为 t = abs(zNear) * tan(eye_angle /2);
+        r.set_projection(get_projection_matrix(45.0, 1, -0.1, -50));
 
         r.draw(TriangleList);
         cv::Mat image(700, 700, CV_32FC3, r.frame_buffer().data());
@@ -538,7 +547,7 @@ int main(int argc, const char** argv)
 
         r.set_model(get_model_matrix(angle,2.5));
         r.set_view(get_view_matrix(eye_pos));
-        r.set_projection(get_projection_matrix(45.0, 1, 0.1, 50));
+        r.set_projection(get_projection_matrix(45.0, 1, -0.1, -50));
 
         //r.draw(pos_id, ind_id, col_id, rst::Primitive::Triangle);
         r.draw(TriangleList);
