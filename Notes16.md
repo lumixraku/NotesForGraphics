@@ -16,6 +16,8 @@ Riemann Integral，黎曼积分的核心思想就是试图通过无限逼近来�
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/monte.jpg)
 
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/monte2.jpg)
+
 PS: 这里的 N 是采样次数  N越大, 得到的结果越准
 
 PS: 蒙特卡罗适合任何形式的积分.
@@ -51,26 +53,88 @@ PS: 蒙特卡罗适合任何形式的积分.
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/whittedProblem2.jpg)
 
-满发射和漫反射之间的情况就没有考虑到.
 
 ## Path tracing
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing2.jpg)
+
+Whitted Style 有错误，但是渲染方程是正确的
+- 首先需要求出半球上的积分
+- 另外解决递归问题
+
+
+一个收集光源发出的光线的 蒙特卡洛积分求解
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing3.jpg)
+         
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing4.jpg)
+
+
+如果是物体反射的光线怎么做？
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing5.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing6.jpg)
+
 N = 1时就是路径追踪， N !=1 分布式路径追踪， 存在指数爆炸问题
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing.jpg)
+一个射线取100个样本射到一个物体上， 就有100个点，之后这100条线每一条都再发出100条光线，再次发出光线反射。
+
+因为存在指数爆炸问题，只有 1 的 N 次方才不会存在爆炸问题。因此接下来每一条射线不再发散，每次打到一个点之后都再只发出一条射线。
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing7.jpg)
+
+但是这样会造成很多噪声，毕竟采样不够。
+
+那么对每一个像素， 多尝试几次光线，且每次光线打到物体反射都只再发出一条射线。
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing8.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing9.jpg)
+
+目前有两个问题
+TODO
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing10.jpg)
+
+
+关于俄罗斯轮盘赌 RR
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing11.jpg)
+
+上面提到递归没有停止条件， 现在通过俄罗斯轮盘赌方式，每次路径打到某一个点之后， 通过轮盘赌的方式决定路径追踪是否继续。 
+
+如果某次决定不再继续下去弹射，表示本次路径追踪到此结束。
+
+这样科学吗？
+
+根据公式算得的期望，得到的结果仍然是 Lo
+
+
+现在已经是比较正确的Path Tracing 实现了， 但是不够高效。
+
 
 
 ### 浪费
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing13.jpg)
+
 在着色点均匀的向外采样
 
 当光源大的时候  在这个像素点可能取5个射线就能打到光源
 当光源小的时候  在一个像素点可能取5万个射线才能打到光源
 
-蒙特卡洛积分要求是在X上面采样 最后就在X 上面积分  （这里的X是积分域）
+根据前面的定义， 蒙特卡洛积分要求是在X上面采样 最后就在X 上面积分  （这里的X是积分域）
 
-
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing9.jpg)
+我们能否在光源上采样， 并且不是像之前那样在立体角上积分，而是也在光源上积分呢？
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing14.jpg)
 
 来自于光源的部分， 可以使用对光源采样。其他非光源的贡献，继续使用RR
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing15.jpg)
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing16.jpg)
+
+最终渲染方程的解
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing17.jpg)
+
 
 # Read More
 关于蒙特卡罗积分的详细介绍  [Wyman的博客](https://www.qiujiawei.com/monte-carlo/)
