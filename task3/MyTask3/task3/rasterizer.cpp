@@ -178,9 +178,9 @@ void rst::rasterizer::draw(std::vector<Triangle *> &TriangleList) {
     float f2 = (50 + 0.1) / 2.0;
 
     Eigen::Matrix4f mvp = projection * view * model;
-    // model 是旋转j矩阵
+    // model 是旋转矩阵
     // projection 是透视投影矩阵
-    // view 是一个平移矩阵
+    // view 是一个平移矩阵(view-model transform)
     
     for (const auto& t:TriangleList)
     {

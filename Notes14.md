@@ -134,10 +134,12 @@ BVH 是对物体划分(更形象点说是分组) 但是空间上组与组之间�
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance.png)
 
-- Radiant flux 辐射通量 (又称为 power)
-- Radiant intensity 辐射强度  (和方向有关)
-- irrediance 辐照度 OR 辐射照度 (物理学: 单位面积接收到的辐射通量    图形学:一个物体表面单位面积接收到的光的能量)
+- Radiant flux 辐射通量 (又称为 power) 
+- Radiant intensity 辐射强度  (和方向有关) power per solid angle 在单位立体角中的能量
+- irrediance 辐照度 OR 辐射照度 power per projected unit area (物理学: 单位面积接收到的辐射通量    图形学:一个物体表面单位面积接收到的光的能量)
 - radiance 辐射亮度 (物理学:单位投影面积, 单位立体角上的辐射通量      图形学:光线在传播过程中度量能量)
+
+PS 图形学中所说到的能量一般都是单位时间内的能量 也就是power 功率  Joule 焦耳在图形学中很少使用
 
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance2.png)

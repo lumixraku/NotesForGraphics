@@ -21,6 +21,8 @@ glossy 表示有点反光, 但是又有些粗糙的物体 (铜镜)
 
 早期人类认为人能看见物体, 是因为眼睛发出光线, 看到物体之后再返回来.  这和现在的常识不符.
 
+PS：所以光线追踪的思想是感知光线
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/emmision.png)
 
 

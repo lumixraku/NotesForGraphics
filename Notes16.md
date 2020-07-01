@@ -6,11 +6,13 @@
 
 之前大学数学中学的求定积分的方法, 是先求出原函数再带入值.  对于一些复杂的函数是没有办法求到原函数的, 怎么办呢?
 
-## 黎曼积分
+## Riemann Integral 黎曼积分
 Riemann Integral，黎曼积分的核心思想就是试图通过无限逼近来确定这个积分值. 把积分区域分割为无数个细长的条.
 
-## 蒙特卡罗积分
-目的: 求定积分    蒙特卡洛则是在积分区域内不断的采样, 采样很多次, 最后求平均值, 也就是面积.
+## Monte Carlo Integration 蒙特卡罗积分
+目的: 求定积分  
+
+蒙特卡洛则是在积分区域内不断的采样, 采样很多次, 最后求平均值, 也就是面积.
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/monte.jpg)
 
@@ -51,7 +53,25 @@ PS: 蒙特卡罗适合任何形式的积分.
 
 满发射和漫反射之间的情况就没有考虑到.
 
+## Path tracing
+N = 1时就是路径追踪， N !=1 分布式路径追踪， 存在指数爆炸问题
 
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing.jpg)
+
+
+### 浪费
+在着色点均匀的向外采样
+
+当光源大的时候  在这个像素点可能取5个射线就能打到光源
+当光源小的时候  在一个像素点可能取5万个射线才能打到光源
+
+蒙特卡洛积分要求是在X上面采样 最后就在X 上面积分  （这里的X是积分域）
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing9.jpg)
+
+来自于光源的部分， 可以使用对光源采样。其他非光源的贡献，继续使用RR
 
 # Read More
 关于蒙特卡罗积分的详细介绍  [Wyman的博客](https://www.qiujiawei.com/monte-carlo/)
+
