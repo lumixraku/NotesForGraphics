@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B81C8E48-F2F4-4CC9-96B5-8C9E67FDA84E"
+            uuid = "A6B7847D-653A-4307-8168-E26F3DD812B4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "task5/Renderer.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "trace(orig, dir, objects)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "castRay(orig, dir, scene, depth)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

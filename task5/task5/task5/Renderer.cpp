@@ -46,6 +46,12 @@ Vector3f refract(const Vector3f &I, const Vector3f &N, const float &ior)
 //
 // \param ior is the material refractive index
 // [/comment]
+
+
+// 菲涅耳方程（Fresnel equation）描述了光线经过两个介质的界面时，反射和透射的光强比重。
+// 参考 https://www.zhihu.com/question/53022233
+// https : //zhuanlan.zhihu.com/p/31534769
+// snell law n1*sinθ1=n2*sinθ2；
 float fresnel(const Vector3f &I, const Vector3f &N, const float &ior)
 {
     float cosi = clamp(-1, 1, dotProduct(I, N));
@@ -87,7 +93,6 @@ std::optional<hit_payload> trace(
     float tNear = kInfinity;
     std::optional<hit_payload> payload;
 
-    // 
     for (const auto & object : objects)
     {
         float tNearK = kInfinity;
@@ -95,8 +100,13 @@ std::optional<hit_payload> trace(
         Vector2f uvK;
 
         // 调用的三角形 OR 球体 intersect 方法
+        // intersect 中每个参数都是引用传递
+        // 注意tNearK < tNear 经过循环后得到的是最近的相交物体
         if (object->intersect(orig, dir, tNearK, indexK, uvK) && tNearK < tNear)
         {
+            // 这个 emplace 是 std::optional 下的函数
+            // https://en.cppreference.com/w/cpp/utility/optional/emplace  
+            // 看起来很像构造函数
             payload.emplace();
             payload->hit_obj = object.get();
             payload->tNear = tNearK;
@@ -124,6 +134,8 @@ std::optional<hit_payload> trace(
 // If the surface is diffuse/glossy we use the Phong illumation model to compute the color
 // at the intersection point.
 // [/comment]
+
+// castRay 就是递归的过程
 Vector3f castRay(
         const Vector3f &orig, const Vector3f &dir, const Scene& scene,
         int depth)
@@ -133,17 +145,31 @@ Vector3f castRay(
     }
 
     Vector3f hitColor = scene.backgroundColor;
+
+    // payload 类型是 hit_payload  trace 是获取碰撞点的详情
     if (auto payload = trace(orig, dir, scene.get_objects()); payload)
     {
         Vector3f hitPoint = orig + dir * payload->tNear;
         Vector3f N; // normal
         Vector2f st; // st coordinates
+
+        // getSurfaceProperties 
+        // getSurfaceProperties 所有参数都是引用传递  但实际上只有 st N 被写入了值
+        // st 是纹理坐标 (重心坐标系统) N是三角形面的法线
         payload->hit_obj->getSurfaceProperties(hitPoint, dir, payload->index, payload->uv, N, st);
         switch (payload->hit_obj->materialType) {
+
+            // 如果ray 射出到了玻璃球体
             case REFLECTION_AND_REFRACTION:
-            {
+            {   
+                // 反射方向
                 Vector3f reflectionDirection = normalize(reflect(dir, N));
+                
+                // 折射方向
                 Vector3f refractionDirection = normalize(refract(dir, N, payload->hit_obj->ior));
+                
+                // 注意在castRay 一开始定义ray dir 的时候 z 是 -1
+                // 点乘 > 0 hitPoint 会变大 看起来是略微向摄像机的位置移动了一点
                 Vector3f reflectionRayOrig = (dotProduct(reflectionDirection, N) < 0) ?
                                              hitPoint - N * scene.epsilon :
                                              hitPoint + N * scene.epsilon;

@@ -64,9 +64,12 @@ public:
         // 此刻 maxIndex = 4  numTris = 2  verts 是包含4个顶点的数组
         vertices = std::unique_ptr<Vector3f[]>(new Vector3f[maxIndex]);
         memcpy(vertices.get(), verts, sizeof(Vector3f) * maxIndex); // 相当于数组复制 verts 中的数据复制到 vertices 中
+        
         vertexIndex = std::unique_ptr<uint32_t[]>(new uint32_t[numTris * 3]);
         memcpy(vertexIndex.get(), vertsIndex, sizeof(uint32_t) * numTris * 3);
+        
         numTriangles = numTris;
+        
         stCoordinates = std::unique_ptr<Vector2f[]>(new Vector2f[maxIndex]);
         memcpy(stCoordinates.get(), st, sizeof(Vector2f) * maxIndex);
     }
@@ -100,15 +103,24 @@ public:
         return intersect;
     }
 
+
+    // PS : C++ 中如果参数不使用可以省略名字
+
+    // index 是当前三角形在全部三角形list 中的下标
+    // N 是三角形面的法线
     void getSurfaceProperties(const Vector3f&, const Vector3f&, const uint32_t& index, const Vector2f& uv, Vector3f& N,
                               Vector2f& st) const override
     {
+        // vertices {{-5,-3,-6}, {5,-3,-6}, {5,-3,-16}, {-5,-3,-16}};
+        // vertexIndex {0, 1, 3, 1, 2, 3};
+        // stCoordinates  {{0, 0}, {1, 0}, {1, 1}, {0, 1}};
         const Vector3f& v0 = vertices[vertexIndex[index * 3]];
         const Vector3f& v1 = vertices[vertexIndex[index * 3 + 1]];
         const Vector3f& v2 = vertices[vertexIndex[index * 3 + 2]];
         Vector3f e0 = normalize(v1 - v0);
         Vector3f e1 = normalize(v2 - v1);
         N = normalize(crossProduct(e0, e1));
+
         const Vector2f& st0 = stCoordinates[vertexIndex[index * 3]];
         const Vector2f& st1 = stCoordinates[vertexIndex[index * 3 + 1]];
         const Vector2f& st2 = stCoordinates[vertexIndex[index * 3 + 2]];
