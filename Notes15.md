@@ -67,15 +67,6 @@ Whitted Style 光线打到某一个物体上, 然后被弹走了(方向改变了
 
 ## The Reflection Equation 反射方程
 
-ωi 表示不同方向的入射光 (从内到外)
-
-p 表示反射点 point
-
-Li(p, ωi) 是入射光的 radiance
-
-fr 对于每一个入射方向都会对应一个着色点和出射方向 这样的BRDF 函数
-
-反射方程
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/brdf.png)
 
@@ -83,7 +74,22 @@ PS: Li(p, ωi)cos(θi)dωi 是图中那一个小块区域dA得到的 Irradiance 
 
 PS: 然后乘以BRDF 函数fr(p, ωi -> wr) 就得到出射的Radiace, 最后整体做积分 
 
+PS: 这里的H 表示半球面
 
+关于此渲染方程 Read More  https://zh.wikipedia.org/wiki/%E6%B8%B2%E6%9F%93%E6%96%B9%E7%A8%8B
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering1.png)
+
+
+Lo(p, ω0) 是点p在出射ω0方向的最终渲染结果
+
+Le(p, ω0) 是点p在ω0方向的自发光
+
+fr(p, ωi, ω0) 点P和入射方向 ωi 到出射方向 ω0 的比例。也就是出射的分布函数。
+
+Li(p, ωi) 是点p 和入射光方向ωi 
+
+n.ωi 是入射角带来的衰减系数。
 
 
 ## The Rendering Equation 渲染方程
@@ -94,18 +100,25 @@ PS: 然后乘以BRDF 函数fr(p, ωi -> wr) 就得到出射的Radiace, 最后整
 
 射出的radiance 可能成为其他点的入射radiance (此刻被照亮的物体本身作为光源存在了), 因此入射光不仅仅是单一的光源.
 
-
 ### 渲染方程
+ 
+```
+对于不发光物体，渲染方程就是反射方程。
+
+发光物体，渲染方程 = 自发光 + 反射方程。
+```
+
+
+反射的光线取决于入射的光线  但是入射光线又取决于其他物体的反射光线， 因此存在递归问题。
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering2.jpg)
 
-
-所看到的光 等于物体自己发出的光 + 从四面八方反射过来的光
-
-
+公式说明
+```
 Le(p, ωo) 表示自发光
-
 Ω+  OR   H^2 表示半球
-
+```
+所看到的光 等于物体自己发出的光 + 从四面八方反射过来的光
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering.jpg)
 
 PS : 这里的积分是因为面光源  面光源就是点光源的积分
@@ -132,6 +145,8 @@ PS: 渲染方程是定义在立体角上的
 
 
 但是对于其他物体反射过来的光应该怎么整?
+## 递归
+
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering3.jpg)
 
@@ -181,7 +196,7 @@ https://www.cnblogs.com/mengdd/p/3237991.html
 
 
 
-## (Radiance versus irradiance
+## (Radiance versus irradiance)
 (Radiance versus irradiance)[http://sites.sinauer.com/animalcommunication2e/chapter04.02.html]
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/radiance11.jpg)
