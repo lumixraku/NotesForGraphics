@@ -207,18 +207,30 @@ Vector3f castRay(
                 // We also apply the lambert cosine law
                 // [/comment]
                 for (auto& light : scene.get_lights()) {
-                    Vector3f lightDir = light->position - hitPoint;
+                    Vector3f lightDir = light->position - hitPoint; // 光源和 hitPoint 的方向 // 后续判断阴影用
                     // square of the distance between hitPoint and the light
-                    float lightDistance2 = dotProduct(lightDir, lightDir);
+                    float lightDistance2 = dotProduct(lightDir, lightDir); // 光源和 hitPointd 的距离平方
                     lightDir = normalize(lightDir);
                     float LdotN = std::max(0.f, dotProduct(lightDir, N));
                     // is the point in shadow, and is the nearest occluding object closer to the object than the light itself?
+                    
+                    // 判断是否有阴影
+                    // 射线从碰撞点出发 方向是g光源
                     auto shadow_res = trace(shadowPointOrig, lightDir, scene.get_objects());
+                    
+                    // tNear 是射线出发后碰到的最近的物体的距离
+                    // 如果这个距离小于光源到碰撞点的距离 表示其中有物体挡住了光源  存在阴影
                     bool inShadow = shadow_res && (shadow_res->tNear * shadow_res->tNear < lightDistance2);
-
+                    
+                    // light->intensity * LdotN Lambert Cosine Law
                     lightAmt += inShadow ? 0 : light->intensity * LdotN;
+                    
+                    // 不要忘记负号
+                    // 在冯氏光照模型中 光的方向是指光源的方向 而不是光线的方向
                     Vector3f reflectionDirection = reflect(-lightDir, N);
-
+                    
+                    
+                    // 下面是计算specular 用的 Phong 高光模型
                     specularColor += powf(std::max(0.f, -dotProduct(reflectionDirection, dir)),
                         payload->hit_obj->specularExponent) * light->intensity;
                 }

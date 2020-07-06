@@ -1,6 +1,22 @@
 # Lecture 08 Shading 2
 
-## 高光模型
+## 高光模型 Phong
+和观察角度有关
+
+Phong 重点在于计算 reflection
+
+V 是观察角度  R 是反射方向
+```
+spec = pow(max(dot(V, R), 0.0), alpha);
+```
+
+Read More https://www.qiujiawei.com/lighting-1/
+
+
+
+## 高光模型 Blinn-Phong
+
+和观察角度有关
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading4.jpg)
 
@@ -18,7 +34,7 @@ PS: cosα 可以写成 法线n 点乘 半程向量h
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading6.jpg)
 
-PS: 另外需要说明的是入射光方向和中学物理中的方向是相反的， 这个公式中入射光的方向就是用光源减去点
+PS: 另外需要说明的是入射光方向其实是指光源的方向，而不是光线的方向。
 
 ## 环境光
 
