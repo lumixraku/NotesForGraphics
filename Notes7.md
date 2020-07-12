@@ -31,9 +31,6 @@ Shading is local.  着色是局部的.(每一个像素点独立运算)
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading.jpg)
 
-
-
-
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading2.jpg)
 
 兰伯特漫反射和观察角度无关 Independent of view direction
@@ -42,3 +39,7 @@ Shading is local.  着色是局部的.(每一个像素点独立运算)
 
 diffuse 扩散，Kd (diffuse coefficient) 漫反射系数  （基本上就是材质本身的颜色）
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/shading3.jpg)
+
+PS:这里入射光方向是指光源相对于这个点的方向，并不是光线射出的方向。
+
+PS: 另外说明一下 max(0, N.I) 当光源从下方打到这个点的时候 N.I的点乘结果是小于0的  因为是兰伯特表面光照， 不考虑物体内部的光。

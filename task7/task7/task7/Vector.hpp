@@ -17,7 +17,7 @@ public:
     Vector3f(float xx, float yy, float zz) : x(xx), y(yy), z(zz) {}
     Vector3f operator * (const float &r) const { return Vector3f(x * r, y * r, z * r); }
     Vector3f operator / (const float &r) const { return Vector3f(x / r, y / r, z / r); }
-
+    // 向量的模
     float norm() {return std::sqrt(x * x + y * y + z * z);}
     Vector3f normalized() {
         float n = std::sqrt(x * x + y * y + z * z);

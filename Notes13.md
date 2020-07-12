@@ -65,14 +65,22 @@ eye ray 永远考虑和场景中的物体最近的点 (完美解决了深度问�
 
 其实从这个图可以看到 光路有很多条, 最终我们要计算的是他们的和 (每条光路存在能量损失, 不然加起来光线亮度就很亮了)
 
-whitted style 是递归的
-
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing6.png)
+whitted style 对于玻璃等电解质是递归的
 
 在任意一个点可以继续传播射线，只要计算好反射和折射方向。
 
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing6.png)
+
+
+
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/raytracing10.jpg)
 在射线和物体的每一个交点，都和光源连线, 计算着色， 最终把这些着色加起来， 反映在像素点上。(被挡住的除外)
+
+
+Read More https://zhuanlan.zhihu.com/p/144403005
+
+PS: 这里提到了 RayTracingInOneWeekend, 这本书中提到的 whitted style ray tracing 和经典的有些不同。zhihu文章也说到 经典的whited-style光线追踪遇到漫反射表面会直接利用blinn-phong模型计算颜色值返回，而不再递归下去。
+
 
 ## 射线的定义
 
@@ -194,3 +202,31 @@ Tenter Texit 是射线和盒子交汇的时机， 没有交点通过延长线求
 如果 Texit < 0 表示没有交点 这里隐含的说明了 Tenter < 0 (因为 Tenter < Texit )
 
 如果 Tenter <  Texit 表示光线在盒子中停留过一段时间，可能有交点
+
+# Read More
+
+## 折射方向公式
+https://zhuanlan.zhihu.com/p/144403005
+
+根据入射方向和法线， 两个不同介质的折射率，求出折射方向。
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/refraction.jpg)
+
+可以简单的理解左半部分是空气  右半部分是某个折射率高于空气的物体。最终需要求出的就是折射方向
+
+
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/refraction2.jpg)
+
+
+## Fresnel 菲涅尔反射
+描述了光线经过两个介质的界面时，反射和透射的光强比重。
+[Read More](https://www.zhihu.com/question/53022233)
+[Read More](https://zhuanlan.zhihu.com/p/31534769)
+
+
+## snell law 斯涅尔定律
+当光波从介质1传播到介质2时 入射光和法线的夹角θ1  折射光和法线夹角θ2 满足
+`n1*sinθ1=n2*sinθ2`
+
+
+wh

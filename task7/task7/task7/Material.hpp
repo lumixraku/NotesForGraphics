@@ -29,6 +29,8 @@ private:
     // If the ray is outside, you need to make cosi positive cosi = -N.I
     //
     // If the ray is inside, you need to invert the refractive indices and negate the normal N
+    // 折射公式 https://zhuanlan.zhihu.com/p/144403005
+    // 这篇知乎文章中的 n 粗体的n表示物体的法线
     Vector3f refract(const Vector3f &I, const Vector3f &N, const float &ior) const
     {
         float cosi = clamp(-1, 1, dotProduct(I, N));

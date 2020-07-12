@@ -23,7 +23,7 @@ struct Intersection
     Vector3f coords;
     Vector3f tcoords;
     Vector3f normal;
-    Vector3f emit;
+    Vector3f emit; // 自发光
     double distance;
     Object* obj;
     Material* m;

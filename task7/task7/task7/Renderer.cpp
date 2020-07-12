@@ -28,7 +28,7 @@ void Renderer::Render(const Scene& scene)
     if(!multithread)
     {
     // change the spp value to change sample ammount
-    int spp = 3;
+    int spp = 3; // samples per pixel
     std::cout << "SPP: " << spp << "\n";
     //#pragma omp parallel for 
     //config for the simple multithreading code

@@ -60,7 +60,7 @@ bool Scene::trace(
 // Implementation of Path Tracing
 Vector3f Scene::castRay(const Ray &ray, int depth) const
 {
-    // TO DO Implement Path Tracing Algorithm here
+    // TODO Implement Path Tracing Algorithm here
     Intersection intersection = intersect(ray);
     Vector3f hitcolor = Vector3f(0);
 

@@ -273,7 +273,7 @@ Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
     float x = n[0];
     float y = n[1];
     float z = n[2];
-     Eigen::Vector3f t = Eigen::Vector3f(x*y/sqrt(x*x+z*z),sqrt(x*x+z*z),z*y/sqrt(x*x+z*z)) ;
+    Eigen::Vector3f t = Eigen::Vector3f(x*y/sqrt(x*x+z*z),sqrt(x*x+z*z),z*y/sqrt(x*x+z*z)) ;
     Eigen::Vector3f b = n.cross(t);
     Eigen::Matrix3f tbn;
     tbn<<t,b,n;
@@ -283,11 +283,15 @@ Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
     float h = payload.texture->height;
     //std::cout<<u<<"---"<<v<<'\n';
     float dU,dV;
+
+    // 当位移采样在纹理内
     if((u+1.0/w)<=1 && (v+1/h)<=1)
     {
          dU = kh * kn * (payload.texture->getColor(u+1.0/w,v).norm()-payload.texture->getColor(u,v).norm());
          dV = kh * kn * (payload.texture->getColor(u,v+1/h).norm()-payload.texture->getColor(u,v).norm());
     }
+
+    // 当位移采样超过纹理的时候
     else if ((u+1.0/w)>1)
     {
          dU = kh * kn * (payload.texture->getColor(1,v).norm()-payload.texture->getColor(u,v).norm());
@@ -299,7 +303,7 @@ Eigen::Vector3f ka = Eigen::Vector3f(0.005, 0.005, 0.005);
          dV = kh * kn * (payload.texture->getColor(u,1).norm()-payload.texture->getColor(u,v).norm());
     }
 
-    Eigen::Vector3f ln(-dU,-dV,1); // -dU -dV 是切线的方向 法线和切线垂直 所以加个负号
+    Eigen::Vector3f ln(-dU, -dV, 1); // -dU -dV 是切线的方向 所以加个负号 法线和切线垂直
     // Position p = p + kh * n * h(u,v)
     // Normal n = TBN * ln
     if(u<=1 && v<=1)
@@ -377,7 +381,22 @@ Eigen::Vector3f bump_fragment_shader(const fragment_shader_payload& payload)
     float x = normal.x();
     float y = normal.y();
     float z = normal.z();
-    Eigen::Vector3f t = {x*y/sqrt(x*x+z*z),sqrt(x*x+z*z),z*y/sqrt(x*x+z*z)};
+    // Eigen::Vector3f t = {x*y/sqrt(x*x+z*z),sqrt(x*x+z*z),z*y/sqrt(x*x+z*z)};
+
+    // 这里的 TBN 是在当前这个点这里构造一个坐标系（标准正交基）(其中N是法线 T是切线 B是副切线·)
+    // 我不理解 task 中给出的方法，但是有另外一种从一个向量出发，构造出一组标准正交基的方法
+    // https://www.qiujiawei.com/pbrt-chapter2/
+    Eigen::Vector3f t;
+    if (x > y) 
+    {
+        t = Eigen::Vector3f(-z, 0, x) / std::sqrt(x * x + z * z);
+    }
+    else
+    {
+        t = Eigen::Vector3f(0, -z, y) / std::sqrt(y * y + z * z);
+    }
+
+
     Eigen::Vector3f b = normal.cross(t);
     Eigen::Matrix3f tbn;
     tbn<<t,b,n;
@@ -520,26 +539,26 @@ int main(int argc, const char** argv)
     int key = 0;
     int frame_count = 0;
 
-    if (command_line)
-    {
-        r.clear(rst::Buffers::Color | rst::Buffers::Depth);
-        r.set_model(get_model_matrix(angle,2.5));
-        r.set_view(get_view_matrix(eye_pos));
-
-        // 原本是 get_projection_matrix(45.0, 1, 0.1, 50)
-        // 但是我不太理解，因为说过相机看往 -Z 方向
-        // 所以我改成了 get_projection_matrix(45.0, 1, -0.1, -50)
-        // 相应的get_projection_matrix 关于 t 的值也改为 t = abs(zNear) * tan(eye_angle /2);
-        r.set_projection(get_projection_matrix(45.0, 1, -0.1, -50));
-
-        r.draw(TriangleList);
-        cv::Mat image(700, 700, CV_32FC3, r.frame_buffer().data());
-        image.convertTo(image, CV_8UC3, 1.0f);
-        cv::cvtColor(image, image, cv::COLOR_RGB2BGR);
-
-        cv::imwrite(filename, image);
-//        return 0;
-    }
+//    if (command_line)
+//    {
+//        r.clear(rst::Buffers::Color | rst::Buffers::Depth);
+//        r.set_model(get_model_matrix(angle,2.5));
+//        r.set_view(get_view_matrix(eye_pos));
+//
+//        // 原本是 get_projection_matrix(45.0, 1, 0.1, 50)
+//        // 但是我不太理解，因为说过相机看往 -Z 方向
+//        // 所以我改成了 get_projection_matrix(45.0, 1, -0.1, -50)
+//        // 相应的get_projection_matrix 关于 t 的值也改为 t = abs(zNear) * tan(eye_angle /2);
+//        r.set_projection(get_projection_matrix(45.0, 1, -0.1, -50));
+//
+//        r.draw(TriangleList);
+//        cv::Mat image(700, 700, CV_32FC3, r.frame_buffer().data());
+//        image.convertTo(image, CV_8UC3, 1.0f);
+//        cv::cvtColor(image, image, cv::COLOR_RGB2BGR);
+//
+//        cv::imwrite(filename, image);
+////        return 0;
+//    }
 
     while(key != 27)
     {
