@@ -78,7 +78,7 @@ PS: 这里的H 表示半球面
 
 关于此渲染方程 Read More  https://zh.wikipedia.org/wiki/%E6%B8%B2%E6%9F%93%E6%96%B9%E7%A8%8B
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering1.png)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/rendering1.jpg)
 
 
 Lo(p, ω0) 是点p在出射ω0方向的最终渲染结果

@@ -16,6 +16,7 @@ public:
     float radius, radius2;
     Material *m;
     float area;
+    // 初始化列表
     Sphere(const Vector3f &c, const float &r, Material* mt = new Material()) : center(c), radius(r), radius2(r * r), m(mt), area(4 * M_PI *r *r) {}
     bool intersect(const Ray& ray) {
         // analytic solution
@@ -24,6 +25,8 @@ public:
         float b = 2 * dotProduct(ray.direction, L);
         float c = dotProduct(L, L) - radius2;
         float t0, t1;
+
+        // 球表面积 S=4πr²
         float area = 4 * M_PI * radius2;
         if (!solveQuadratic(a, b, c, t0, t1)) return false;
         if (t0 < 0) t0 = t1;

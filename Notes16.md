@@ -170,7 +170,7 @@ PS: 有的地方也称为面积形式的的渲染方程， 并且将前面介绍
 
 来自于光源的部分， 可以使用对光源采样。其他非光源的贡献，继续使用RR
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing15.jpg)
-
+PS dA 是光源上的一个小的表面
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing16.jpg)
 

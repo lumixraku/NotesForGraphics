@@ -79,6 +79,8 @@ void Renderer::Render(const Scene& scene)
             Vector3f dir = normalize(Vector3f(-x, y, 1));
             thread_local Vector3f color;
             color = Vector3f(0);
+
+            // SPP 每个像素点多发出几条射线采样
             for (int k = 0; k < spp; k++){
                 color += scene.castRay(Ray(eye_pos, dir), 0) / spp;  
             }

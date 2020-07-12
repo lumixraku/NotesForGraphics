@@ -136,6 +136,8 @@ Vector3f Material::sample(const Vector3f &wi, const Vector3f &N){
         case DIFFUSE:
         {
             // uniform sample on the hemisphere
+            // 半球面采样
+            // 参考 https://000ddd00dd0d.github.io/2019/04/07/Spherical-Sampling/
             float x_1 = get_random_float(), x_2 = get_random_float();
             float z = std::fabs(1.0f - 2.0f * x_1);
             float r = std::sqrt(1.0f - z * z), phi = 2 * M_PI * x_2;
