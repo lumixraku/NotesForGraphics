@@ -1,0 +1,1012 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		25AD5ED94A314F0B9725094C /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CC33CA9FAAAD4C998F5FCC48 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				6FCB7F0B6E7E4E93A6ACC85A /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		2E1FC693276748E59C99E969 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AB248BDB95A642D1AB61B951 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7FBB6C08E3114B3481B94A7F /* CMake Rules */,
+			);
+			dependencies = (
+				CC455F62068B4999A542C6EC /* PBXTargetDependency */,
+				911F3C11D0D949EE95E09E4D /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		578011DE2BD24D06917D6210 /* uninstall */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9D20F71E2A4B4EFBB88F3BDC /* Build configuration list for PBXAggregateTarget "uninstall" */;
+			buildPhases = (
+				6AEF808F1C43459485E442C6 /* CMake Rules */,
+			);
+			dependencies = (
+				6C7CB5491713489C9C9DF7B0 /* PBXTargetDependency */,
+			);
+			name = uninstall;
+			productName = uninstall;
+		};
+		F5DDC7EDE2474297AB88F07A /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1BBDB00E6AFE48E8BBD7E07A /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				9F1E1039FBB040F9A0552849 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				C8A25D2900D347C3A8BCCD4A /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		196A46B13D154B3796E91790 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/input.c */ = {isa = PBXBuildFile; fileRef = D3B9F52DE8D644D6A6013E63 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/input.c */; };
+		2FF30948C00249D3B627490C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/mach_time.c */ = {isa = PBXBuildFile; fileRef = FBD09A78302A4A9E90D4C1BB /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/mach_time.c */; };
+		3DB701D50F244A8286914A5F /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/context.c */ = {isa = PBXBuildFile; fileRef = CBF4E90DC9564DF1801D6696 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/context.c */; };
+		424D07DD97AC42EFAB722F14 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = E4E1BCD24B784C62A195C6EE /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_init.m */; };
+		49826719BC8F4C588980D87D /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = F0D8D23F36034D99A47590F2 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.h */; };
+		4CC3272312C94124897294C8 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = 1D112ABC93BB4828BD3F43F1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_platform.h */; };
+		56C5E2CA0BB14638BA2477A0 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/internal.h */ = {isa = PBXBuildFile; fileRef = DE5A38E46EA546DD872DDEC6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/internal.h */; };
+		6094B8D8F9CE4313AB459552 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 2920F5C8BEA74161865B79A7 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/glfw_config.h */; };
+		664859F89F104E3A870301A0 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = CA77CC3874774D25ABC0F9D1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/CMakeLists.txt */; };
+		6AAF6136434F428FA0F24858 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.h */ = {isa = PBXBuildFile; fileRef = 61C0CDD2422B46589A6E1BCD /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.h */; };
+		7045B82909DE4EA2A8608F46 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = AAF343CF021145F4AF0BAC7C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3.h */; };
+		76835BD410944C2C874AB4AC /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.m */ = {isa = PBXBuildFile; fileRef = 971AED34E69249E9AF168102 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.m */; };
+		8366CF59E06E48F5B1878B23 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/window.c */ = {isa = PBXBuildFile; fileRef = 756E5E9240BB4692BB3F8CAA /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/window.c */; };
+		A5346DEB8B3B4B2B81514288 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/monitor.c */ = {isa = PBXBuildFile; fileRef = 0E4BDA9C90B94E52A3C7B884 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/monitor.c */; };
+		A8CFBD170B76442CB669C0A6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = 81E5D1721D7044A48433C2A6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_window.m */; };
+		B68D31DB12574FF8A8652B7C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.c */ = {isa = PBXBuildFile; fileRef = 2C0457ED6BFF4E7D9C3A0812 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.c */; };
+		CAA77B76BAE5441AB5894E69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = F3006EA4F56348BE93E8C87A /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.m */; };
+		D406D51DED494C16A5B37B69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = 7D90A093CFFD41C780CD3C9C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_monitor.m */; };
+		E61AE1B3451A41A181819FF2 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/init.c */ = {isa = PBXBuildFile; fileRef = 82C7421FB3804C58A87AFFB0 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/init.c */; };
+		EE6FADC7E0E14A7F82F01502 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = 41BA92C0B2CF416490E90A84 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3native.h */; };
+		F78E843A010D4B228304BD4A /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.h */ = {isa = PBXBuildFile; fileRef = BC2EEF012EEE421DBACD2B69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		6B0C225ED6134FB197EA1A40 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		82E38F9BAB6D42B0A175217F /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		84DC69372F404DF9AD5E20B5 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		A87FA1D1EDE14313BAF6A7DB /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		189022B52437435CA9799B77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E100830DF4984968BEB0ABF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67E91750008B415AA5844E12;
+			remoteInfo = glfw;
+		};
+		2CB8492966584449BD2930D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E100830DF4984968BEB0ABF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25AD5ED94A314F0B9725094C;
+			remoteInfo = ZERO_CHECK;
+		};
+		571E94D06AA041A6B654BE9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E100830DF4984968BEB0ABF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E1FC693276748E59C99E969;
+			remoteInfo = ALL_BUILD;
+		};
+		9BC84461D38149EAB83FC914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E100830DF4984968BEB0ABF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25AD5ED94A314F0B9725094C;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E4BDA9C90B94E52A3C7B884 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = monitor.c; path = src/monitor.c; sourceTree = SOURCE_ROOT; };
+		1D112ABC93BB4828BD3F43F1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_platform.h; path = src/cocoa_platform.h; sourceTree = SOURCE_ROOT; };
+		2920F5C8BEA74161865B79A7 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw_config.h; path = src/glfw_config.h; sourceTree = SOURCE_ROOT; };
+		2C0457ED6BFF4E7D9C3A0812 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = posix_tls.c; path = src/posix_tls.c; sourceTree = SOURCE_ROOT; };
+		41BA92C0B2CF416490E90A84 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3native.h; path = include/GLFW/glfw3native.h; sourceTree = SOURCE_ROOT; };
+		461B2BEA72E34EA29EAD158E /* glfw */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglfw3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C0CDD2422B46589A6E1BCD /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = iokit_joystick.h; path = src/iokit_joystick.h; sourceTree = SOURCE_ROOT; };
+		6449942920944DFF87A8E8BD /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		756E5E9240BB4692BB3F8CAA /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/window.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = window.c; path = src/window.c; sourceTree = SOURCE_ROOT; };
+		7D90A093CFFD41C780CD3C9C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_monitor.m; path = src/cocoa_monitor.m; sourceTree = SOURCE_ROOT; };
+		81E5D1721D7044A48433C2A6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_window.m; path = src/cocoa_window.m; sourceTree = SOURCE_ROOT; };
+		82C7421FB3804C58A87AFFB0 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = src/init.c; sourceTree = SOURCE_ROOT; };
+		8DDF05322C6C4F38953D6222 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		971AED34E69249E9AF168102 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = iokit_joystick.m; path = src/iokit_joystick.m; sourceTree = SOURCE_ROOT; };
+		AAF343CF021145F4AF0BAC7C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3.h; path = include/GLFW/glfw3.h; sourceTree = SOURCE_ROOT; };
+		BC2EEF012EEE421DBACD2B69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = posix_tls.h; path = src/posix_tls.h; sourceTree = SOURCE_ROOT; };
+		CA77CC3874774D25ABC0F9D1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		CBF4E90DC9564DF1801D6696 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = context.c; path = src/context.c; sourceTree = SOURCE_ROOT; };
+		D3B9F52DE8D644D6A6013E63 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = src/input.c; sourceTree = SOURCE_ROOT; };
+		DE5A38E46EA546DD872DDEC6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = internal.h; path = src/internal.h; sourceTree = SOURCE_ROOT; };
+		E4E1BCD24B784C62A195C6EE /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_init.m; path = src/cocoa_init.m; sourceTree = SOURCE_ROOT; };
+		F0D8D23F36034D99A47590F2 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nsgl_context.h; path = src/nsgl_context.h; sourceTree = SOURCE_ROOT; };
+		F3006EA4F56348BE93E8C87A /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = nsgl_context.m; path = src/nsgl_context.m; sourceTree = SOURCE_ROOT; };
+		FBD09A78302A4A9E90D4C1BB /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/mach_time.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = mach_time.c; path = src/mach_time.c; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0CD9821E53D149C8B7B5229D /* uninstall */ = {
+			isa = PBXGroup;
+			children = (
+				76250E7EDD1B4C039F73B609 /* CMake Rules */,
+				8DDF05322C6C4F38953D6222 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeLists.txt */,
+			);
+			name = uninstall;
+			sourceTree = "<group>";
+		};
+		21937571DD17454CAB459550 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				F6A4BCAA5D694823B79AE3CF /* CMake Rules */,
+				6449942920944DFF87A8E8BD /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		232778315E584B478726805E /* GLFW3 */ = {
+			isa = PBXGroup;
+			children = (
+				F59466B282DB4A6F8085D3DA /* glfw */,
+			);
+			name = GLFW3;
+			sourceTree = "<group>";
+		};
+		76250E7EDD1B4C039F73B609 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		7C18F9EEB1E0456B9743D985 = {
+			isa = PBXGroup;
+			children = (
+				0CD9821E53D149C8B7B5229D /* uninstall */,
+				21937571DD17454CAB459550 /* ALL_BUILD */,
+				232778315E584B478726805E /* GLFW3 */,
+				C98FA2CD3B1E4BE78E335BFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA1E260392804094A71A4A2B /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				AAF343CF021145F4AF0BAC7C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3.h */,
+				41BA92C0B2CF416490E90A84 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/include/GLFW/glfw3native.h */,
+				1D112ABC93BB4828BD3F43F1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_platform.h */,
+				2920F5C8BEA74161865B79A7 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/glfw_config.h */,
+				DE5A38E46EA546DD872DDEC6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/internal.h */,
+				61C0CDD2422B46589A6E1BCD /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.h */,
+				F0D8D23F36034D99A47590F2 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.h */,
+				BC2EEF012EEE421DBACD2B69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		C52629E3CE2448B8A6B089A7 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4E1BCD24B784C62A195C6EE /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_init.m */,
+				7D90A093CFFD41C780CD3C9C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_monitor.m */,
+				81E5D1721D7044A48433C2A6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_window.m */,
+				CBF4E90DC9564DF1801D6696 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/context.c */,
+				82C7421FB3804C58A87AFFB0 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/init.c */,
+				D3B9F52DE8D644D6A6013E63 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/input.c */,
+				971AED34E69249E9AF168102 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.m */,
+				FBD09A78302A4A9E90D4C1BB /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/mach_time.c */,
+				0E4BDA9C90B94E52A3C7B884 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/monitor.c */,
+				F3006EA4F56348BE93E8C87A /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.m */,
+				2C0457ED6BFF4E7D9C3A0812 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.c */,
+				756E5E9240BB4692BB3F8CAA /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/window.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		C98FA2CD3B1E4BE78E335BFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				461B2BEA72E34EA29EAD158E /* glfw */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F59466B282DB4A6F8085D3DA /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				C52629E3CE2448B8A6B089A7 /* Source Files */,
+				BA1E260392804094A71A4A2B /* Header Files */,
+				CA77CC3874774D25ABC0F9D1 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/CMakeLists.txt */,
+			);
+			name = glfw;
+			sourceTree = "<group>";
+		};
+		F6A4BCAA5D694823B79AE3CF /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67E91750008B415AA5844E12 /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A435779A666443318DC8527E /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				BADE3C22AF44434D8200D595 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = 461B2BEA72E34EA29EAD158E /* glfw */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E100830DF4984968BEB0ABF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1130;
+			};
+			buildConfigurationList = E5869F4A6D8F494AA5055842 /* Build configuration list for PBXProject "GLFW" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				82E38F9BAB6D42B0A175217F /* Debug */,
+				A87FA1D1EDE14313BAF6A7DB /* Release */,
+				6B0C225ED6134FB197EA1A40 /* MinSizeRel */,
+				84DC69372F404DF9AD5E20B5 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 7C18F9EEB1E0456B9743D985;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				2E1FC693276748E59C99E969 /* ALL_BUILD */,
+				25AD5ED94A314F0B9725094C /* ZERO_CHECK */,
+				67E91750008B415AA5844E12 /* glfw */,
+				F5DDC7EDE2474297AB88F07A /* install */,
+				578011DE2BD24D06917D6210 /* uninstall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6653A13815D14A24952DBC4E = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		6AEF808F1C43459485E442C6 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw -f /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeScripts/uninstall_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		6FCB7F0B6E7E4E93A6ACC85A /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw -f /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		7846BB7CEE7F4FC589F5F230 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7FBB6C08E3114B3481B94A7F /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw -f /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		9F1E1039FBB040F9A0552849 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw -f /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/CMakeScripts/install_postBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		A7BB0625943947749BD425DF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		BFAA69E50FAC46F6A53FC5E2 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BADE3C22AF44434D8200D595 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424D07DD97AC42EFAB722F14 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_init.m */,
+				D406D51DED494C16A5B37B69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_monitor.m */,
+				A8CFBD170B76442CB669C0A6 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/cocoa_window.m */,
+				3DB701D50F244A8286914A5F /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/context.c */,
+				E61AE1B3451A41A181819FF2 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/init.c */,
+				196A46B13D154B3796E91790 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/input.c */,
+				76835BD410944C2C874AB4AC /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/iokit_joystick.m */,
+				2FF30948C00249D3B627490C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/mach_time.c */,
+				A5346DEB8B3B4B2B81514288 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/monitor.c */,
+				CAA77B76BAE5441AB5894E69 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/nsgl_context.m */,
+				B68D31DB12574FF8A8652B7C /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/posix_tls.c */,
+				8366CF59E06E48F5B1878B23 /* /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src/window.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C7CB5491713489C9C9DF7B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25AD5ED94A314F0B9725094C /* ZERO_CHECK */;
+			targetProxy = 9BC84461D38149EAB83FC914 /* PBXContainerItemProxy */;
+		};
+		911F3C11D0D949EE95E09E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25AD5ED94A314F0B9725094C /* ZERO_CHECK */;
+			targetProxy = 2CB8492966584449BD2930D7 /* PBXContainerItemProxy */;
+		};
+		C8A25D2900D347C3A8BCCD4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E1FC693276748E59C99E969 /* ALL_BUILD */;
+			targetProxy = 571E94D06AA041A6B654BE9E /* PBXContainerItemProxy */;
+		};
+		CC455F62068B4999A542C6EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67E91750008B415AA5844E12 /* glfw */;
+			targetProxy = 189022B52437435CA9799B77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0564A55EBA0842078F2ABD1A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/build;
+			};
+			name = RelWithDebInfo;
+		};
+		1F4149C148894B9B9D9EB3D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		26FA45E7B47E4836BE22F189 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -w   -Wall";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		39FC8C79DE614F8E8C50CC7E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/build;
+			};
+			name = MinSizeRel;
+		};
+		3AAB6B9826134104A5ECD73A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   -fPIC -w   -Wall";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		3F8C9B87972E4321BEF197F9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4D157B5AB5244D8C80C4EAEF /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5188BA99162F49918EF56898 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		55086621D0FA4C13BB5CB719 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		5707F027BA814FA4A759F3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		597AA552246143AE96B1DA05 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		68F843298C0841658D88F897 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		71B145EF827C48F3A5E7F42A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		74A5D2438589449EBF155407 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -w   -Wall";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		752E3D1BE78D4EE59CB9024A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC -w   -Wall";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		794099E903104C93AE399945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		7A2743F0678F4481A3A8DF99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7FD838541A14411B9B50DAC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/build;
+			};
+			name = Release;
+		};
+		92A30C474AAE4E3CB657F3EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		AAC6CFC71D7347A8AB798385 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C29B60284AFE4A809CF54158 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D97FACD4022A485EAF2A1906 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		ED9DE8DF5E4B477C8FE0FC73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		FE0EBCE0DCD644DB96FD4E4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/lilin/repos/NotesForGraphics/task8works/task8/CGL/deps/glfw/build;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BBDB00E6AFE48E8BBD7E07A /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71B145EF827C48F3A5E7F42A /* Debug */,
+				5707F027BA814FA4A759F3F7 /* Release */,
+				597AA552246143AE96B1DA05 /* MinSizeRel */,
+				4D157B5AB5244D8C80C4EAEF /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9D20F71E2A4B4EFBB88F3BDC /* Build configuration list for PBXAggregateTarget "uninstall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A2743F0678F4481A3A8DF99 /* Debug */,
+				ED9DE8DF5E4B477C8FE0FC73 /* Release */,
+				3F8C9B87972E4321BEF197F9 /* MinSizeRel */,
+				D97FACD4022A485EAF2A1906 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A435779A666443318DC8527E /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AAB6B9826134104A5ECD73A /* Debug */,
+				74A5D2438589449EBF155407 /* Release */,
+				26FA45E7B47E4836BE22F189 /* MinSizeRel */,
+				752E3D1BE78D4EE59CB9024A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AB248BDB95A642D1AB61B951 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F4149C148894B9B9D9EB3D2 /* Debug */,
+				55086621D0FA4C13BB5CB719 /* Release */,
+				AAC6CFC71D7347A8AB798385 /* MinSizeRel */,
+				68F843298C0841658D88F897 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC33CA9FAAAD4C998F5FCC48 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A30C474AAE4E3CB657F3EE /* Debug */,
+				794099E903104C93AE399945 /* Release */,
+				5188BA99162F49918EF56898 /* MinSizeRel */,
+				C29B60284AFE4A809CF54158 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5869F4A6D8F494AA5055842 /* Build configuration list for PBXProject "GLFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE0EBCE0DCD644DB96FD4E4F /* Debug */,
+				7FD838541A14411B9B50DAC0 /* Release */,
+				39FC8C79DE614F8E8C50CC7E /* MinSizeRel */,
+				0564A55EBA0842078F2ABD1A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E100830DF4984968BEB0ABF9 /* Project object */;
+}
