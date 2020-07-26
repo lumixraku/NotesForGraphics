@@ -21,7 +21,10 @@ Riemann Integral，黎曼积分的核心思想就是试图通过无限逼近来�
 PS: 这里的 N 是采样次数  N越大, 得到的结果越准
 
 PS: 蒙特卡罗适合任何形式的积分.
-
+37:13
+ωi 是半球上的一个方向
+p(ωi) 是 pdf 
+积分变成简单的求和平均
 
 # Path tracing 路径追踪
 
@@ -102,6 +105,11 @@ n.ωi 是入射角带来的衰减系数。
 
 看起来很完美了！但是还没有结束。
 
+不过目前仍有两个问题
+
+1. 爆炸
+2. 递归没有停止
+
 根据上面的做法 存在爆炸问题
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing6.jpg)
@@ -125,10 +133,7 @@ N = 1时就是路径追踪， N !=1 分布式路径追踪， 存在指数爆炸�
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing9.jpg)
 
-不过目前仍有两个问题
 
-1. 
-2. 递归没有停止
 
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/tracing10.jpg)
 

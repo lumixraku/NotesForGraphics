@@ -65,38 +65,35 @@ Vector3f Scene::castRay(const Ray &ray, int depth) const
     Vector3f hitcolor = Vector3f(0);
 
     //deal with light source
-    if(intersection.emit.norm()>0)
-    hitcolor = Vector3f(1);
-    else if(intersection.happened)
+    if (intersection.emit.norm() > 0)
+        hitcolor = Vector3f(1);
+    else if (intersection.happened)
     {
-        Vector3f wo = normalize(-ray.direction); // 光的出射方向
-        Vector3f p = intersection.coords;        // 射线和物体的坐标
-        Vector3f N = normalize(intersection.normal); 
+        Vector3f wo = normalize(-ray.direction);
+        Vector3f p = intersection.coords;
+        Vector3f N = normalize(intersection.normal);
 
         float pdf_light = 0.0f;
-        Intersection inter;   
-        sampleLight(inter,pdf_light); // 任意物体表面上任意一个点
+        Intersection inter;
+        sampleLight(inter, pdf_light);
         Vector3f x = inter.coords;
-        Vector3f ws = normalize(x-p);     // 
+        Vector3f ws = normalize(x - p);
         Vector3f NN = normalize(inter.normal);
 
         Vector3f L_dir = Vector3f(0);
-        // direct light
-        // 这里的公式参考 Notes16 P43
-        if((intersect(Ray(p,ws)).coords - x).norm() < 0.01)
+        //direct light
+        if ((intersect(Ray(p, ws)).coords - x).norm() < 0.01)
         {
-            // inter.emit 是发光物体才有意义  不然inter.emit 是0
-            // eval(wo,ws,N)  返回的是一个漫反射系数
-            L_dir = inter.emit * intersection.m->eval(wo,ws,N)*dotProduct(ws,N) * dotProduct(-ws,NN) / (((x-p).norm()* (x-p).norm()) * pdf_light);
+            L_dir = inter.emit * intersection.m->eval(wo, ws, N) * dotProduct(ws, N) * dotProduct(-ws, NN) / (((x - p).norm() * (x - p).norm()) * pdf_light);
         }
 
         Vector3f L_indir = Vector3f(0);
         float P_RR = get_random_float();
-        // indirect light
-        if(P_RR < Scene::RussianRoulette)
+        //indirect light
+        if (P_RR < Scene::RussianRoulette)
         {
-            Vector3f wi = intersection.m->sample(wo,N);
-            L_indir = castRay(Ray(p,wi),depth) *intersection.m->eval(wi,wo,N) * dotProduct(wi,N) / (intersection.m->pdf(wi,wo,N)*Scene::RussianRoulette);
+            Vector3f wi = intersection.m->sample(wo, N);
+            L_indir = castRay(Ray(p, wi), depth) * intersection.m->eval(wi, wo, N) * dotProduct(wi, N) / (intersection.m->pdf(wi, wo, N) * Scene::RussianRoulette);
         }
         hitcolor = L_indir + L_dir;
     }

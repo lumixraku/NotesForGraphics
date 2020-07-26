@@ -55,7 +55,14 @@ PS: 这里的PDF 是概率密度函数.
 # Advanced Appearance Modeling
 外观建模
 
-## 散射介质: 不在一个表面上而是散布在空间中. (比如云, 雾, 烟 等)
+## Participating Media 散射介质: 不在一个表面上而是散布在空间中. (比如云, 雾, 烟 等)
+又称为参与介质
+
+比如云， 光线在行进的过程中， 因为有冰晶的存在，光线经过冰晶时， 光线会被随机分散 到各个方向上。
+
+### 相位函数 Phase Function
+决定光线如何散射
+
 
 ## 头发:
 Marshner Model 效果比 Kajiya model 好
@@ -85,6 +92,8 @@ Marshner Model 效果比 Kajiya model 好
 # 噪声函数 Noise
 可以利用噪声函数, 得到空间中的点来模拟立体物体. (这样处理速度快)
 
-比如山脉, 水面的波纹.
+一个很有名的噪声函数 Perlin Noise
+
+应用：比如地形 山脉, 水面的波纹.
 
 程序化材质, Houdini 就专门做这个的.

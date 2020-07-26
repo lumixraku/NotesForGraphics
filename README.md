@@ -124,3 +124,12 @@ omp.h
 /usr/local/Cellar/libomp/10.0.0/include
 
 https://stackoverflow.com/questions/25990296/how-to-include-omp-h-in-os-x
+
+## for task8 
+### ft2build.h' file not found. Mac
+
+https://stackoverflow.com/questions/16826069/osx-10-7-5-fatal-error-ft2build-h-file-not-found
+
+`brew install freetype`
+
+### Undefined symbol: _FT_Init_FreeType
