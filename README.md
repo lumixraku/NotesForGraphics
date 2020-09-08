@@ -132,4 +132,3 @@ https://stackoverflow.com/questions/16826069/osx-10-7-5-fatal-error-ft2build-h-f
 
 `brew install freetype`
 
-### Undefined symbol: _FT_Init_FreeType

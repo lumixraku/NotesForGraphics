@@ -8,7 +8,7 @@
 和编译出来的 obj 不一样, 这里的 obj 是文本文件
 ![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/geometry4.png)
 
-这里描述的是一个立方体, 所以有 8 个顶点v.
+这里描述的是一个立方体, 所以有 8 2111个顶点v.
 另外还描述了 6 个法线vn (因为有公用所以重复了2个).
 另外如何用三角形描述面呢?  关注 f 开头的描述  f 第n个点/纹理坐标/法线 ...
 
@@ -26,7 +26,7 @@ https://www.jianshu.com/p/f7f3e7b6ebf5
 
 `f 1/1/1  2/2/1  3/3/1` 三个点组成的面
 
-`f v1/vt1 v2/vt2 v3/vt3 ...`  顶点纹理索引  1个/
+`f v1/vt1 v2/vt2 v3/vt3 ...`  顶点纹理索引  1个斜杠/
 
 `f v1/vt1/vn1 v2/vt2/vn2 v3/vt3/vn3` 顶点纹理法线索引  2个/
 
@@ -96,7 +96,7 @@ b02 是 b01 b11 做线性插值得到
 1 3 3 1 二项式定理（杨辉三角）
 
 
-![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier3.jpg)
+![image](https://raw.githubusercontent.com/lumixraku/NotesForGraphics/master/images/bezier4.jpg)
 贝塞尔曲线当然不仅仅是局限在平面上， 3维空间中的点一样适用
 
 
